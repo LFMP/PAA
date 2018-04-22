@@ -1,0 +1,748 @@
+%This document uses PGF 3.0 graph package.
+%Compile it with lualatex.
+
+\documentclass[a4paper]{exam}
+
+\usepackage[utf8]{inputenc}
+\usepackage{fontspec}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath,amssymb, alltt}
+\usepackage[margin=1.5cm,nohead,nofoot]{geometry}
+\usepackage{multicol}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{color}
+
+
+\usepackage[ruled,vlined,noend,linesnumbered]{algorithm2e}
+\setlength{\algoheightrule}{0pt}
+\setlength{\algotitleheightrule}{0pt}
+
+
+
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+
+\footer{}{}{}
+
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+\bracketedpoints
+\shadedsolutions
+\renewcommand{\solutiontitle}{\noindent\textbf{Solution:}\par\noindent}
+\definecolor{SolutionColor}{gray}{0.8}
+%\def\explanation#1{%
+\def\explanation#1{%
+  \ifprintanswers\mdseries\hspace{1em}\colorbox{SolutionColor}‌​{\strut #1}
+  \ifprintanswers\mdseries\hspace{1em}\colorbox{SolutionColor}{\strut #1}
+  \else 
+  \enspace\hrulefill
+  \fi}
+
+\renewcommand{\solutiontitle}{\noindent\textbf{Solução:}\par\noindent}
+
+
+\begin{document}
+
+%Descomente a linha a seguir para imprimir as soluções.
+\printanswers
+
+\begin{center}
+\begin{minipage}[c][1.5cm][c]{1.5cm}
+\includegraphics[height=1.5cm]{logo.jpg}
+\end{minipage}
+\begin{minipage}[c][1.5cm][c]{12cm} 
+\textsc{\Large Universidade Estadual de Maringá} \\
+Departamento de Informática -- Projeto e Análise de Algoritmos \\
+Prof. Daniel Kikuti
+\end{minipage}
+\end{center}
+
+\begin{center}
+\section*{Trabalho 1}
+\end{center}
+
+\bracketedpoints
+\pointname{}
+\pointformat{[Valor: \thepoints]}
+
+\begin{questions}
+  %\large
+
+  \question Para cada par de funções $f(n)$ e $g(n)$ na tabela a
+  seguir, indique se $f(n)$ pertence a $O(g(n))$, $\Omega(g(n))$
+  ou $\Theta(g(n))$. Considere que $k \geq 1$, $\epsilon > 0$ e
+  $c > 1$. Justifique sua resposta.
+  \begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+      \hline
+      & $f(n)$ & $g(n)$ & $f(n) = O(g(n))$? & $f(n) = \Omega(g(n))$? & $f(n) = \Theta(g(n))$? \\
+      \hline
+      a) & $\lg^k n$  &  $n^{\epsilon}$   & X & & \\ \hline
+      b) & $n^k$      &  $c^n$          & X & & \\ \hline
+      c) & $2^n$      &  $2^{n/2}$       & & X & \\ \hline
+      d) & $n^{\lg c}$ &  $c^{\lg n}$      & & & X \\ \hline
+    \end{tabular}
+  \end{center}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  
+  \question Para cada item a seguir, assinale \textbf{V}erdadeiro 
+  ou \textbf{F}also. \textbf{Justifique} sua resposta usando as 
+  definições de notação assintótica.
+  \begin{parts}
+    \part 
+    \mbox{\begin{oneparcheckboxes}
+      \correctchoice V \choice F
+    \end{oneparcheckboxes}}
+    Se $f(n) = \log_{16} n$ então $f(n) = \Theta(\lg n)$?
+    \part 
+    \mbox{\begin{oneparcheckboxes}
+      \choice V \correctchoice F
+    \end{oneparcheckboxes}}
+    $2^{n + a} = \Theta(2^{2n})$? Onde $a \in \mathbb{N}$ é uma constante.
+    \part
+    \mbox{\begin{oneparcheckboxes}
+      \correctchoice V \choice F
+    \end{oneparcheckboxes}}
+    $\frac{n^{2}}{4} - 3n - 16 = \Omega(n^2)$?
+    \part
+    \mbox{\begin{oneparcheckboxes}
+      \correctchoice V \choice F
+    \end{oneparcheckboxes}}
+    $7n^2 + 13n = O(n^2)$.
+  \end{parts}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Mostre usando as definições de notação assintótica:
+  \begin{parts}
+    \part $\frac{n}{2}\lg(\frac{n}{2}) = \Omega(n \lg n)$.
+    \part $n^2 + 1000n = O(n^2)$.
+    \part $2^{n+1} = \Theta(2^{n})$.
+  \end{parts}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Expresse as seguintes funções em termos da notação $\Theta$.
+  \begin{parts}
+    \part $2n + 3 \log ^{100} n$.
+    \part $7n^3 + 1000n \log n + 3n$.
+    \part $3n^{1.5} + (\sqrt{n})^3 \log n$.
+    \part $2^n + 100^n + n!$.
+  \end{parts}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question É comum usar a notação $f(n) \prec g(n)$ para denotar que
+  $f(n) \in o(g(n))$. Use esta notação para expressar a
+  hierarquia de classes de complexidade das seguintes funções:
+  $\sqrt{n}$, $2^{n^2}$, $n$, $\lg n$, $1$, $\lg \lg n$, $n!$, $n^2$, $n^{3/4}$, $2^n$, $n \lg n$.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  
+  
+  
+  \question Sejam $f(n)$ e $g(n)$ funções positivas. Informe se a
+  afirmação é verdadeira ou falsa e justifique.
+  \begin{parts}
+    \part $f(n) = O(g(n))$ implica $g(n) = O(f(n))$.
+    \part $f(n) + g(n) = \Theta(min(f(n),g(n)))$
+    \part $f(n) = O(g(n))$ implica $g(n) = \Omega(f(n))$
+    \part $f(n) = \Theta(f(n/2))$
+  \end{parts}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+ 
+  \question Mostre uma função $f(n)$ tal que $f(n) \not\in \Omega(f(n+1))$.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Mostre que $\sum_{i=1}^{n} \lg i = \Theta(n \lg n)$.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Mostre que $n! = O(2^{n^2})$.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Seja $p(n) = \sum_{i=0}^{k} a_{i}n^{i}$
+  (polinômio em $n$ de grau $k$), onde $k$ é um inteiro não-negativo, $a_i$
+  é uma constante e $a_k > 0$, mostre que $p(n) = \Theta(n^k)$.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  
+  
+  \question Papai Noel resolveu antecipar seu presente de
+  Natal. Sabendo que você foi um(a) bom(a) menino(a), ele escreveu um
+  algoritmo para que você analise e ganhe uns pontinhos na prova de
+  PAA. Sua tarefa é simples. Dado um inteiro $n$ como entrada,
+  expresse por meio de notação assintótica a quantidade de ``Ho!''s
+  que será impressa pelo algoritmo (use a notação $\Theta$).
+  
+  \begin{algorithm}[H]
+    \NoCaptionOfAlgo
+    \DontPrintSemicolon
+
+    $i \leftarrow 1$\;
+    \While{$i \leq n$} {
+      \For {$j \leftarrow i$ \KwTo $2i - 1$}{
+        print ``Ho!'';
+      }
+      $i \leftarrow 2i$\;
+    }
+    \caption{\textsc{Feliz-Natal}($n$)}
+  \end{algorithm}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  
+
+  \question Dado um inteiro $n$ (assuma que $n=2^k$, tal que
+  $k$ é um número inteiro positivo) e $expr$ (que corresponde a uma
+  expressão a ser impressa), informe, por meio de notação assintótica,
+  a quantidade de mensagens que o algoritmo a seguir irá
+  imprimir. Dê sua resposta em função de $n$.
+
+  \begin{algorithm}[H]
+    \NoCaptionOfAlgo
+    \DontPrintSemicolon
+
+    \While {$n \geq 1$}{
+      \For {$j \gets 1$ \KwTo $n$}{
+        print $expr$\;
+      }
+      $n \gets n / 2$
+    }
+    \caption{\textsc{Prog}($n$, $expr$)}
+  \end{algorithm}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+
+  \question Seja $count$ o número total de iterações feitas pelo
+  algoritmo a seguir para uma entrada $n$. Informe, usando
+  notação assintótica, o valor de $count$ em função de $n$.
+
+  \begin{algorithm}[H]
+    \NoCaptionOfAlgo
+    \DontPrintSemicolon
+
+    $count \gets 0$\;
+    \For {$i \gets 1$ \KwTo $n$}{
+      \For {$j \gets 1$ \KwTo $\floor{n/i}$}{
+        $count \gets count + 1$\;
+      }
+    }
+    \Return $count$\;
+    \caption{\textsc{Count}($n$)}
+  \end{algorithm}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+
+  \question Seja $count$ o número total de iterações feitas pelo
+  algoritmo a seguir para uma entrada $n$ (considere que $n = 2^{2^{k}}$,
+  para algum inteiro positivo $k$). Informe, usando
+  notação assintótica, o valor de $count$ em função de $n$.
+  
+  \begin{algorithm}[H]
+    \NoCaptionOfAlgo
+    \DontPrintSemicolon
+
+    $count \gets 0$\;
+    \For {$i \gets 1$ \KwTo $n$}{
+      \For {$j \gets 2; j \leq n; j \gets j^2$}{
+        $count \gets count + 1$\;
+      }
+    }
+    \Return $count$\;
+    \caption{\textsc{Count}($n$)}
+  \end{algorithm}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+   \question Dado um inteiro $n \geq 0$ como entrada, muitos
+   afirmam que o algoritmo a seguir é capaz de medir o desespero na
+   prova de PAA. Outros afirmam que o algoritmo mede a alegria. Para
+   o professor, não interessa o que o algoritmo mede. O objetivo
+   desta questão é avaliar se o aluno é capaz de encontrar uma
+   fórmula fechada que representa o valor final de $x$ em função do
+   valor de entrada $n$. Em outras palavras, uma função que
+   representa quantas vezes a linha \ref{incrementa} será executada.
+
+  \begin{algorithm}[H]
+    \NoCaptionOfAlgo
+    \DontPrintSemicolon
+
+    $x \gets 0$\;
+    \For {$i \gets 1$ \KwTo $n$}{
+      \For {$j \gets i + 1$ \KwTo $n$}{
+        \For {$k \gets 1$ \KwTo $j - i$}{
+          $x \gets x + 1$ \label{incrementa}\;
+        }
+      }
+    }
+    \caption{\textsc{Prog}($n$)}
+  \end{algorithm}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  
+  \question Resolva as seguintes recorrências (use o método da
+  substituição):
+  \begin{parts}
+    \part $T(n) = 8T(n/2) + \Theta(n^2)$
+    \part $T(n) = 7T(n/2) + \Theta(n^2)$
+    \part $T(n) = T(n/4) + 1$
+    \part $T(n) = 2T(n/2) + n \lg n$
+  \end{parts}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Use árvore de recorrência para estimar um limite superior
+  para as seguintes recorrências. Assuma que $T(n)$ é uma constante
+  para $n \leq 2$. Depois comprove usando o método de
+  substituição.
+  \begin{parts}
+    \part $T(n/2) + T(n/4) + T(n/8) +n$
+    \part $2T(n/4) + \sqrt{n}$
+  \end{parts}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Utilize o método de árvore de recursão para supor um
+  limite assintótico superior para a recorrência \linebreak
+  $T(n) = 3T(n-1) + 1$. Depois verifique pelo método de
+  substituição que este limite está correto.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  
+  \question Utilize o método de árvore de recursão para supor um
+  limite assintótico superior para a recorrência \linebreak
+  $T(n) = 2T(n/2) + n \lg n$. Depois verifique pelo método de
+  substituição que este limite está correto. 
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Utilize o método de árvore de recursão para supor um
+  limite assintótico superior para a recorrência \linebreak $T(n) = T(n/3) +
+  T(2n/3) + \Theta(n)$. Depois verifique pelo método de
+  substituição que este limite está correto.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question A recorrência $T(n) = 7T(n/2) + n^2$ descreve o
+  tempo de execução de um algoritmo $A$. Um algoritmo alternativo $A'$ 
+  tem um tempo de execução $T'(n) = aT'(n/4) + n^2$. Qual é o maior
+  inteiro $a$ que faz com que $A'$ seja assintoticamente mais rápido
+  que $A$?
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  
+  \question Use o método mestre para resolver as seguintes
+  recorrências: 
+  \begin{parts}
+    \part $T(n) = 3T(n/2) + n \lg n$ 
+    \part $T(n) = 3T(n/2) + n^2$
+    \part $T(n) = 4T(n/2) + n^2$
+    \part $T(n) = 4T(n/2) + n^2\sqrt{n}$
+    \part $T(n) = 5T(n/5) + n$  
+    \part $T(n) = 6T(n/3) + n^2$
+    \part $T(n) = 9T(n/2) + n^3$
+  \end{parts}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+
+  \question Dadas as recorrências dos algoritmos $A$ e
+  $B$, determine a complexidade de cada um deles e compare-os
+  (informe se $A$ é assintoticamente mais rápido que $B$, $B$
+  é assintoticamente mais rápido que $A$, ou ambos possuem a
+  mesma complexidade assintótica).
+  \begin{itemize}
+  \item $T_A(n) = 27T_A(n/3) + n$
+  \item $T_B(n) = 4T_B(n/2) + n^3$
+  \end{itemize}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+
+  
+  \question Os três algoritmos a seguir resolvem um
+  problema de tamanho $n$ por meio da técnica de divisão e conquista.
+  Analise a complexidade de cada um deles e informe qual algoritmo é
+  assintoticamente mais eficiente.
+  \begin{itemize}
+  \item Algoritmo $A$ resolve problemas dividindo-os em cinco
+    subproblemas de tamanho $n/2$, recursivamente resolve cada
+    subproblema e combina suas soluções em tempo linear para obter
+    uma solução do problema original.
+    \item Algoritmo $B$ resolve problemas dividindo-os em dois
+      subproblemas de tamanho $n-1$, recursivamente resolve cada um
+      dos subproblemas e combina as soluções em tempo constante para
+      obter a solução do problema original.
+    \item Algoritmo $C$ resolve problemas dividindo-os em nove 
+      subproblemas de tamanho $n/3$, recursivamente resolve cada
+      subproblema e combina suas soluções em tempo $O(n^2)$ para obter
+      uma solução do problema original.
+  \end{itemize}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Os três algoritmos a seguir computam corretamente
+  $x^n$ para $x>0$ e $n \geq 0$. Mostre que os três algoritmos estão
+  corretos e analise a complexidade assintótica
+  de cada um deles (em função de $n$) e informe qual deles é mais
+  eficiente.
+  \setlength{\algoheightrule}{0pt}
+  \setlength{\algotitleheightrule}{0pt}
+  \begin{center}
+    \vspace{-1cm}
+    \begin{minipage}[t][][c]{.25\textwidth}
+      \begin{algorithm}[H]
+        \NoCaptionOfAlgo
+        \DontPrintSemicolon
+        $resp \gets 1$\;
+        $i \gets 0$\;
+        \While {$i < n$} {
+          $resp \gets resp * x$\;
+          $i \gets i + 1$\;
+        }
+        \Return $resp$\;
+        \caption{\textsc{Power1}($x, n$)}
+      \end{algorithm}
+    \end{minipage}%
+  \begin{minipage}[t][][c]{.35\textwidth} 
+      \begin{algorithm}[H]
+        \NoCaptionOfAlgo
+        \DontPrintSemicolon
+        \If {$n = 0$}{
+          \Return $1$\;
+        }
+        \Else {
+            \Return \textsc{Power2}($x, n-1$) $*$ $x$\;
+        }
+        \caption{\textsc{Power2}($x,n$)}
+      \end{algorithm}
+    \end{minipage}%
+    \begin{minipage}[t][][c]{.38\textwidth} 
+      \begin{algorithm}[H]
+        \NoCaptionOfAlgo
+        \DontPrintSemicolon
+        \If {$n = 0$}{
+          \Return $1$\;
+        }
+        \ElseIf {($n$ mod $2$) = 0} {
+          $aux \leftarrow $ \textsc{Power3}($x, n/2$)\;
+          \Return $aux*aux$\;
+        }
+        \Else {
+          \Return \textsc{Power3}($x, n-1$) $*$ $x$\;
+        }
+        \caption{\textsc{Power3}($x,n$)}
+      \end{algorithm}
+    \end{minipage}
+  \end{center}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+
+  \question Considere o algoritmo \textsc{Heapsort} descrito a
+  seguir. Mostre que o algoritmo está correto usando o seguinte
+  invariante de laço: ``No começo de cada iteração do laço
+  \textbf{for} das linhas 2--5, o subvetor $A[1 \dots i]$ contém os $i$
+  menores elementos de $A[1 \dots n]$, e o subvetor $A[i{+}1 \dots n]$ contém
+  os $n-i$ maiores elementos de $A[1 \dots n]$ em ordem.
+
+  \setlength{\algoheightrule}{0pt}
+  \setlength{\algotitleheightrule}{0pt}
+  
+  \IncMargin{1em}
+  \begin{algorithm}[H]
+    \NoCaptionOfAlgo
+    \DontPrintSemicolon
+
+    \textsc{Build-Max-Heap}($A$)\;
+    \For {$i \leftarrow A.length$ \KwTo $2$}{
+      \textsc{swap}($A[1], A[i]$)\;
+      $A.heap$-$size \leftarrow A.heap$-$size - 1$\;
+      \textsc{Max-Heapify}($A, 1$)\;
+    }
+
+    \caption{\textsc{Heapsort}($A$)}
+  \end{algorithm}
+  \DecMargin{1em}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+
+  \question Analise a complexidade dos seguintes algoritmos:
+  \begin{parts}
+    \part
+    \begin{algorithm}[H]
+      \NoCaptionOfAlgo
+      \DontPrintSemicolon
+      \If {$n = 1$}{
+        \Return 1\;
+      }
+      \Else {
+        \Return \textsc{f}($n - 1$) + \textsc{f}($n - 1$)\;
+      }
+      \caption{\textsc{f}($n$)}
+    \end{algorithm}
+    \begin{solution}
+      Escreva a solução aqui.
+    \end{solution}
+    
+    \part
+    \begin{algorithm}[H]
+      \NoCaptionOfAlgo
+      \DontPrintSemicolon
+      \If {$max < min$}{
+        \Return -1\;
+      }
+      $mid \leftarrow min + ((max - min)/2)$\;
+      \If {$A[mid] > key$}{
+        \Return \textsc{Busca}($A, key, min, mid-1$)\;
+      }
+      \ElseIf {A[mid] < key} {
+        \Return \textsc{Busca}($A, key, mid+1, max$)\;
+      }
+      \Else {
+        \Return $mid$\;
+      }
+      \caption{\textsc{Busca}($A[], key, min, max$)}
+    \end{algorithm}
+    \begin{solution}
+      Escreva a solução aqui.
+    \end{solution}
+  
+    \part
+    \begin{algorithm}[H]
+      \NoCaptionOfAlgo
+      \DontPrintSemicolon
+      \If {$n > 1$}{
+        \For{$i \leftarrow 1$ \KwTo $n^3$}{
+          Faz algo (custo $\Theta(1)$)\;
+        }
+        \textsc{Recursive}($n/3$)\;
+      }
+      \caption{\textsc{Recursive}($n$)}
+    \end{algorithm}
+    \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \end{parts}
+
+  \question Assinale Verdadeiro (V) ou Falso (F). \textbf{Justifique}
+  \begin{parts}
+    \part \mbox{\begin{oneparcheckboxes}
+        \correctchoice V \choice F
+    \end{oneparcheckboxes}}
+    O limite assintótico inferior para algoritmos de ordenação
+    baseados em comparação é $\Omega(n \lg n)$. Um algoritmo de
+    ordenação por comparação que faz $2T(n/2) + \Theta(1)$
+    comparações no pior caso com certeza não efetua corretamente
+    a ordenação para algumas instâncias.
+    
+    \part \mbox{\begin{oneparcheckboxes}
+      \choice V \correctchoice F
+    \end{oneparcheckboxes}}
+    Suponha que iremos gerar $n$ números aleatórios no intervalo
+    $[0 \ldots n^2]$. Considerando base decimal (isto é, um número $x$
+    possui $\lfloor \log_{10} x \rfloor + 1$ dígitos na base $10$), é
+    correto afirmar que o algoritmo \textsc{Radix Sort}
+    faz a ordenação destes $n$ números em tempo $O(n)$.
+
+    \part \mbox{\begin{oneparcheckboxes}
+        \choice V \correctchoice F
+    \end{oneparcheckboxes}}
+    Visto que o limite assintótico inferior para algoritmos de ordenação
+    baseados em comparação é $\Omega(n \lg n)$, não seria possível o
+    desenvolvimento de um algoritmo de ordenação correto com complexidade
+    de tempo $O(n \sqrt{n})$ no pior caso.
+    
+    \part \mbox{\begin{oneparcheckboxes}
+        \choice V \correctchoice F
+    \end{oneparcheckboxes}}
+    Suponha que iremos gerar $n$ números aleatórios no intervalo
+    $[0 \ldots n^2]$. É correto afirmar que o algoritmo \textsc{Counting Sort}
+    faz a ordenação destes $n$ números em tempo $O(n)$.
+    
+    \part \mbox{\begin{oneparcheckboxes}
+        \correctchoice V \choice F
+    \end{oneparcheckboxes}}
+    Suponha que iremos gerar $n$ números aleatórios no intervalo
+    $[0 \ldots n^2]$. É correto afirmar que o algoritmo \textsc{Mergesort}
+    faz a ordenação destes $n$ números em tempo $O(n \lg n)$.
+
+    \part \mbox{\begin{oneparcheckboxes}
+        \choice V \correctchoice F
+    \end{oneparcheckboxes}}
+    Não é possível construir um heap máximo com $n$ elementos em tempo
+    $O(n)$. Pois para inserir um elemento no heap temos custo $O(\lg n)$ e,
+    como temos $n$ elementos a serem inseridos, o custo total seria pelo
+    menos $O(n \lg n)$.
+
+    \part \mbox{\begin{oneparcheckboxes}
+      \correctchoice V \choice F
+    \end{oneparcheckboxes}}
+    Em um heap binário, metade dos elementos do vetor são
+    folhas. Se aplicarmos o procedimento \textsc{MaxHeapfy}
+    para cada elemento da metade até o primeiro, então 
+    ao fim teremos um Heap Máximo.
+
+    \part \mbox{\begin{oneparcheckboxes}
+        \correctchoice V \choice F
+    \end{oneparcheckboxes}}
+    É correto afirmar que: no melhor caso, o algoritmo \textsc{Insertion Sort}
+    é mais eficiente que os algoritmos \textsc{Mergesort} e \textsc{Heapsort}. 
+  \end{parts}
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+
+  \question Use o modelo de árvore de decisão para representar as
+  comparações efetuadas pelo algoritmo \textsc{Insertion-Sort} para
+  uma instância de entrada com quatro elementos.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Use o modelo de árvore de decisão para representar as
+  comparações efetuadas pelo algoritmo \textsc{Mergesort} para uma instância
+  de entrada com três elementos.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Use o modelo de árvore de decisão para representar as
+  comparações efetuadas pelo algoritmo \textsc{Quicksort} para uma
+  instância de entrada com três elementos.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Dado um vetor de inteiros distintos e ordenados em
+  ordem crescente $A = \{a_1, \ldots, a_n\}$:
+  \begin{parts}
+    \part Descreva um algoritmo que determina se existe um
+    índice $i$ tal que $a_i = i$ em tempo $O(\lg n)$. Por exemplo, em
+    $\{-10, -3, 3, 5, 7\}$, $a_3 = 3$. Em $\{2,3,4,5,6,7\}$ não existe
+    tal $i$. Argumente que seu algoritmo está correto.
+    \begin{solution}
+      Escreva a solução aqui.
+    \end{solution}
+    \part Explique por que sua solução leva tempo $O(\lg n)$.
+    \begin{solution}
+      Escreva a solução aqui.
+    \end{solution}
+  \end{parts}
+
+  \question Descreva um algoritmo baseado no paradigma de Divisão
+  e Conquista que encontra o mínimo de um conjunto de $n$ números.
+  Assuma que os elementos estão em um vetor $A = [1\ldots n]$.
+  Mostre que o algoritmo está correto e analise sua complexidade.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Descreva um algoritmo baseado no paradigma de Divisão
+  e Conquista que encontra o segundo maior elemento de um conjunto
+  de $n$ números. Assuma que os elementos estão
+  em um vetor $A = [1\ldots n]$. Mostre que o algoritmo está
+  correto e analise sua complexidade.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  
+  \question Descreva um algoritmo que faz uso do procedimento
+  \textsc{Partition} para encontrar o $k$-ésimo menor elemento.
+  Isto é, o algoritmo recebe como entrada um vetor $A[1 \ldots n]$ e um
+  um valor $1 \leq k \leq n$ e devolve qual seria este $k$-ésimo
+  menor elemento. Por exemplo, se $k = 1$ o algoritmo deveria
+  devolver o mínimo do vetor; se $k=n$ o algoritmo deveria devolver
+  o máximo; para um $k=3$ devolveria o terceiro menor elemento.
+  Analise seu algoritmo no pior e no melhor caso.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Assuma que você possui $k$ vetores ordenados, cada um
+  com $n$ elementos, e você precisa combiná-los em um único vetor
+  ordenado com $k n$ elementos.
+  \begin{parts}
+  \part Usando o procedimento \textsc{Merge}, faça a intercalação
+  do primeiro vetor com o segundo, então intercale o terceiro, depois
+  o quarto e assim por diante. Qual a complexidade de tempo deste
+  algoritmo, em função de $k$ e $n$?
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  \part Apresente uma solução mais eficiente para este problema, por
+  meio da técnica de Divisão e Conquista. Qual a complexidade de
+  tempo de sua solução, em função de $k$ e $n$?
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  \end{parts}
+
+  \question Dado um vetor de números inteiros $A[1 \ldots n]$, determine
+  quais elementos do vetor são únicos. Apresente um algoritmo eficiente.
+  Faça uma análise de complexidade.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Descreva um algoritmo de tempo $\Theta(n \lg n)$ que, dado
+  um conjunto $S$ de $n$ números inteiros e outro número $x$, determine
+  se existe dois elementos em $S$ cuja soma é exatamente $x$.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+
+  \question Problema da moeda falsa. Dado um conjunto de $n$ moedas,
+  $n-1$ delas verdadeiras (com mesmo peso) e uma falsa (mais leve),
+  descreva um algoritmo eficiente (com tempo $o(n)$) para encontrar
+  a moeda falsa.
+  \begin{solution}
+    Escreva a solução aqui.
+  \end{solution}
+  
+\end{questions}
+
+\end{document}
