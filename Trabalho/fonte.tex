@@ -83,14 +83,14 @@ Prof. Daniel Kikuti
       \hline
       & $f(n)$ & $g(n)$ & $f(n) = O(g(n))$? & $f(n) = \Omega(g(n))$? & $f(n) = \Theta(g(n))$? \\
       \hline
-      a) & $\lg^k n$  &  $n^{\epsilon}$   & X & & \\ \hline
+      a) & $\lg^k n$  &  $n^{\epsilon}$   &  & & X \\ \hline
       b) & $n^k$      &  $c^n$          & X & & \\ \hline
       c) & $2^n$      &  $2^{n/2}$       & & X & \\ \hline
       d) & $n^{\lg c}$ &  $c^{\lg n}$      & & & X \\ \hline
     \end{tabular}
   \end{center}
   \begin{solution}
-    Escreva a solução aqui.
+    a) $\displaystyle\lim_{n\to\infty} \frac{\lg^k n}{n^{\epsilon}} = \infty \to f(n) = \Theta(g(n))$
   \end{solution}
   
   \question Para cada item a seguir, assinale \textbf{V}erdadeiro 
