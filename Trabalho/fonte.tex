@@ -318,7 +318,20 @@ Prof. Daniel Kikuti
     \caption{\textsc{Prog}($n$)}
   \end{algorithm}
   \begin{solution}
-    Escreva a solução aqui.
+    $ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k+1)(n-k)}{2} $  $=$ $ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k)^2 + (n-k)}{2} $\\
+    {} $=$ $ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k)^2}{2} + \displaystyle\sum_{k=1}^{n-1}  \dfrac{n}{2} - \displaystyle\sum_{k=1}^{n-1} \dfrac{k}{2} $ \\
+    {} $=$ $ \dfrac{1}{2}\left[ \displaystyle\sum_{k=1}^{n-1} k ^2 \right] + \dfrac{1}{2} \left[ n(n-1) - \dfrac{n(n-1)}{2} \right]  $\\ 
+    {} $=$ $ \dfrac{1}{2} \left[ \displaystyle\sum_{k=1}^{n-1} k^2 \right] + \dfrac{n(n-1)}{4} $\\
+    {} $=$ $ \dfrac{1}{2} \left[ \displaystyle\sum_{k=1}^{n-1} k^2 \right] + \dfrac{n^2 -n}{4} $\\
+
+    Como $\displaystyle\sum_{k=1}^{n-1} k^2 $ é a soma das $n-1$  primeiras linha do triângulo de pascal, podemos concluir
+
+    $\displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k+1)(n-k)}{2}$ $=$ $\dfrac{1}{2} \left[ \dfrac{n(n-1)(2n-1)}{6}\right] + \dfrac{n^2 + n}{4} $\\
+    {} $=$ $ \dfrac{(n^2 -n)(2n-1)}{12} + \dfrac{n^2 - n}{4}  $\\
+    {} $=$ $ \dfrac{2n^3 - 3n^2 + n}{12} + \dfrac{3n^2 + 3n}{12}$\\
+    {} $=$ $ \dfrac{2n^3- 2n}{12} $\\
+    {} $=$ $ \dfrac{n^3 -n}{6} $\\
+
   \end{solution}
   %16
   \question Resolva as seguintes recorrências (use o método da

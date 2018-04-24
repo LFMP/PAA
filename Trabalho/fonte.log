@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  23 APR 2018 23:33
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  24 APR 2018 09:16
  restricted system commands enabled.
 **fonte.tex
 (./fonte.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.136 seconds
+luaotfload | main : initialization completed in 0.127 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (./exam.cls
 Document Class: exam 2017/12/17 Version 2.603 by Philip Hirschhorn
@@ -1383,49 +1383,59 @@ $[]$
  []
 
 [3]
-Underfull \hbox (badness 1281) in paragraph at lines 348--353
+Underfull \hbox (badness 10000) in paragraph at lines 321--326
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 329--334
+
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 361--366
 []\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 356--361
-[]\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
-li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
- []
-
-
-Underfull \hbox (badness 1281) in paragraph at lines 364--369
+Underfull \hbox (badness 1281) in paragraph at lines 369--374
 []\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 [4]
-Overfull \hbox (7.54262pt too wide) in paragraph at lines 440--484
+Underfull \hbox (badness 1281) in paragraph at lines 377--382
+[]\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
+li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
+ []
+
+
+Overfull \hbox (7.54262pt too wide) in paragraph at lines 453--497
  [][][] 
  []
 
-
-Overfull \hbox (17.78pt too wide) in paragraph at lines 500--512
+[5]
+Overfull \hbox (17.78pt too wide) in paragraph at lines 513--525
 $[]$ 
  []
 
-[5]
-Overfull \hbox (38.89pt too wide) in paragraph at lines 521--531
+
+Overfull \hbox (38.89pt too wide) in paragraph at lines 534--544
 []$[]$ 
  []
 
 
-Overfull \hbox (38.89pt too wide) in paragraph at lines 537--554
+Overfull \hbox (38.89pt too wide) in paragraph at lines 550--567
 []$[]$ 
  []
 
 
-Overfull \hbox (38.89pt too wide) in paragraph at lines 560--570
+Overfull \hbox (38.89pt too wide) in paragraph at lines 573--583
 []$[]$ 
  []
 
-[6] [7] [8]
+[6] [7] [8] [9]
 This exam contains 39 questions with 43 parts, 0 subparts, and 0 subsubparts.
 (./fonte.aux))
 
@@ -1435,7 +1445,7 @@ Here is how much of LuaTeX's memory you used:
  734 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 8 attribute, 99 glue_spec, 8 attrib
 ute_list, 2 write nodes
-   avail lists: 2:1169,3:331,4:92,5:267,6:2330,7:1006,8:119,9:395,10:7,11:282
+   avail lists: 2:1483,3:331,4:91,5:322,6:2684,7:1011,8:126,9:425,10:7,11:340
  31054 multiletter control sequences out of 65536+600000
  50 fonts using 7713543 bytes
  55i,18n,54p,406b,774s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -1454,10 +1464,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 am10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on fonte.pdf (8 pages, 213489 bytes).
+Output written on fonte.pdf (9 pages, 216787 bytes).
 
-PDF statistics: 127 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
+PDF statistics: 130 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
