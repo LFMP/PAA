@@ -73,7 +73,7 @@ Prof. Daniel Kikuti
 
 \begin{questions}
   %\large
-
+  %01
   \question Para cada par de funções $f(n)$ e $g(n)$ na tabela a
   seguir, indique se $f(n)$ pertence a $O(g(n))$, $\Omega(g(n))$
   ou $\Theta(g(n))$. Considere que $k \geq 1$, $\epsilon > 0$ e
@@ -83,16 +83,19 @@ Prof. Daniel Kikuti
       \hline
       & $f(n)$ & $g(n)$ & $f(n) = O(g(n))$? & $f(n) = \Omega(g(n))$? & $f(n) = \Theta(g(n))$? \\
       \hline
-      a) & $\lg^k n$  &  $n^{\epsilon}$   &  & & X \\ \hline
+      a) & $\lg^k n$  &  $n^{\epsilon}$   & & X & \\ \hline
       b) & $n^k$      &  $c^n$          & X & & \\ \hline
       c) & $2^n$      &  $2^{n/2}$       & & X & \\ \hline
       d) & $n^{\lg c}$ &  $c^{\lg n}$      & & & X \\ \hline
     \end{tabular}
   \end{center}
   \begin{solution}
-    a) $\displaystyle\lim_{n\to\infty} \frac{\lg^k n}{n^{\epsilon}} = \infty \to f(n) = \Theta(g(n))$
+    a) $\displaystyle\lim_{n\to\infty} \frac{\lg^k n}{n^{\epsilon}} = \infty \to f(n) = \Omega(g(n))$ \\
+    b) $\displaystyle\lim_{n\to\infty} \frac{n^k}{c^n} = 0 \to f(n) = O(g(n))$ \\
+    c) $\displaystyle\lim_{n\to\infty} \frac{2^n}{2^{n/2}} = \infty \to f(n) = \Omega(g(n))$ \\
+    d) $\displaystyle\lim_{n\to\infty} \frac{n^{\lg c}}{c^{\lg n}} = 1 \to f(n) = \Theta(g(n))$
   \end{solution}
-  
+  %02
   \question Para cada item a seguir, assinale \textbf{V}erdadeiro 
   ou \textbf{F}also. \textbf{Justifique} sua resposta usando as 
   definições de notação assintótica.
@@ -119,9 +122,14 @@ Prof. Daniel Kikuti
     $7n^2 + 13n = O(n^2)$.
   \end{parts}
   \begin{solution}
-    Escreva a solução aqui.
+    a) $\displaystyle\lim_{n\to\infty} \frac{\log_{16} n}{\lg n} = \frac{1}{4} \to f(n) = \Theta(g(n))$ \\
+    b) $\displaystyle\lim_{n\to\infty} \frac{2^{n+a}}{2^{2n}} = 0 \to f(n) = 2^{n+a} \in O(2^{2n})$ \\
+    c) $\displaystyle\lim_{n\to\infty} \frac{\frac{n^2}{4} -3n - 16}{n^2} = \frac{1}{4} \to f(n) = \frac{n^2}{4} -3n - 16 
+        \in \Theta(n^2) =  O(n^2) \land  \Omega(n^2)$ \\
+    d) $\displaystyle\lim_{n\to\infty} \frac{7n^2 +13n}{n^2} = 7 \to f(n) = \frac{7n^2 +13n}{n^2}
+        \in \Theta(n^2) =  O(n^2) \land  \Omega(n^2)$
   \end{solution}
-
+  %03
   \question Mostre usando as definições de notação assintótica:
   \begin{parts}
     \part $\frac{n}{2}\lg(\frac{n}{2}) = \Omega(n \lg n)$.
@@ -131,7 +139,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %04
   \question Expresse as seguintes funções em termos da notação $\Theta$.
   \begin{parts}
     \part $2n + 3 \log ^{100} n$.
@@ -142,7 +150,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %05
   \question É comum usar a notação $f(n) \prec g(n)$ para denotar que
   $f(n) \in o(g(n))$. Use esta notação para expressar a
   hierarquia de classes de complexidade das seguintes funções:
@@ -152,7 +160,7 @@ Prof. Daniel Kikuti
   \end{solution}
   
   
-  
+  %06
   \question Sejam $f(n)$ e $g(n)$ funções positivas. Informe se a
   afirmação é verdadeira ou falsa e justifique.
   \begin{parts}
@@ -164,30 +172,39 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
- 
+  %07
   \question Mostre uma função $f(n)$ tal que $f(n) \not\in \Omega(f(n+1))$.
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %08
   \question Mostre que $\sum_{i=1}^{n} \lg i = \Theta(n \lg n)$.
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %09
   \question Mostre que $n! = O(2^{n^2})$.
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %10
   \question Seja $p(n) = \sum_{i=0}^{k} a_{i}n^{i}$
   (polinômio em $n$ de grau $k$), onde $k$ é um inteiro não-negativo, $a_i$
   é uma constante e $a_k > 0$, mostre que $p(n) = \Theta(n^k)$.
   \begin{solution}
-    Escreva a solução aqui.
+    Usando limite, devemos mostrar que: L = $\displaystyle\lim_{n\to\infty} \frac{\sum_{i=0}^{k} a_{i}n^{i}}{n^k}, 0 < L < \infty$\\
+
+    $ L = \displaystyle\lim_{n\to\infty} \frac{\sum_{i=0}^{k} a_{i}n^{i}}{n^k} \\
+        = \displaystyle\lim_{n\to\infty} \frac{a_0 n^0 + a_1 n^1 + a_2 n^2 + ... + a_k n^k}{n^k} \\
+        = \displaystyle\lim_{n\to\infty} \frac{a_0 n^0}{n^k} + 
+          \displaystyle\lim_{n\to\infty} \frac{a_1 n^1}{n^k} + 
+          \displaystyle\lim_{n\to\infty} \frac{a_2 n^2}{n^k} + ... + 
+          \displaystyle\lim_{n\to\infty} \frac{a_k n^k}{n^k} \\
+        = 0 + 0 + 0 + a_k \\
+        = a_k.$ \\
+    Como $a_k$ > 0 => $p(n) = \Theta(n^k)$.
   \end{solution}
-  
-  
+  %11
   \question Papai Noel resolveu antecipar seu presente de
   Natal. Sabendo que você foi um(a) bom(a) menino(a), ele escreveu um
   algoritmo para que você analise e ganhe uns pontinhos na prova de
@@ -211,8 +228,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-  
-
+  %12
   \question Dado um inteiro $n$ (assuma que $n=2^k$, tal que
   $k$ é um número inteiro positivo) e $expr$ (que corresponde a uma
   expressão a ser impressa), informe, por meio de notação assintótica,
@@ -234,8 +250,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-
+  %13
   \question Seja $count$ o número total de iterações feitas pelo
   algoritmo a seguir para uma entrada $n$. Informe, usando
   notação assintótica, o valor de $count$ em função de $n$.
@@ -256,8 +271,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-
+  %14
   \question Seja $count$ o número total de iterações feitas pelo
   algoritmo a seguir para uma entrada $n$ (considere que $n = 2^{2^{k}}$,
   para algum inteiro positivo $k$). Informe, usando
@@ -279,15 +293,15 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-   \question Dado um inteiro $n \geq 0$ como entrada, muitos
-   afirmam que o algoritmo a seguir é capaz de medir o desespero na
-   prova de PAA. Outros afirmam que o algoritmo mede a alegria. Para
-   o professor, não interessa o que o algoritmo mede. O objetivo
-   desta questão é avaliar se o aluno é capaz de encontrar uma
-   fórmula fechada que representa o valor final de $x$ em função do
-   valor de entrada $n$. Em outras palavras, uma função que
-   representa quantas vezes a linha \ref{incrementa} será executada.
+  %15
+  \question Dado um inteiro $n \geq 0$ como entrada, muitos
+  afirmam que o algoritmo a seguir é capaz de medir o desespero na
+  prova de PAA. Outros afirmam que o algoritmo mede a alegria. Para
+  o professor, não interessa o que o algoritmo mede. O objetivo
+  desta questão é avaliar se o aluno é capaz de encontrar uma
+  fórmula fechada que representa o valor final de $x$ em função do
+  valor de entrada $n$. Em outras palavras, uma função que
+  representa quantas vezes a linha \ref{incrementa} será executada.
 
   \begin{algorithm}[H]
     \NoCaptionOfAlgo
@@ -306,7 +320,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-  
+  %16
   \question Resolva as seguintes recorrências (use o método da
   substituição):
   \begin{parts}
@@ -318,7 +332,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %17
   \question Use árvore de recorrência para estimar um limite superior
   para as seguintes recorrências. Assuma que $T(n)$ é uma constante
   para $n \leq 2$. Depois comprove usando o método de
@@ -330,7 +344,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %18
   \question Utilize o método de árvore de recursão para supor um
   limite assintótico superior para a recorrência \linebreak
   $T(n) = 3T(n-1) + 1$. Depois verifique pelo método de
@@ -338,7 +352,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-  
+  %19
   \question Utilize o método de árvore de recursão para supor um
   limite assintótico superior para a recorrência \linebreak
   $T(n) = 2T(n/2) + n \lg n$. Depois verifique pelo método de
@@ -346,7 +360,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %20
   \question Utilize o método de árvore de recursão para supor um
   limite assintótico superior para a recorrência \linebreak $T(n) = T(n/3) +
   T(2n/3) + \Theta(n)$. Depois verifique pelo método de
@@ -354,7 +368,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %21
   \question A recorrência $T(n) = 7T(n/2) + n^2$ descreve o
   tempo de execução de um algoritmo $A$. Um algoritmo alternativo $A'$ 
   tem um tempo de execução $T'(n) = aT'(n/4) + n^2$. Qual é o maior
@@ -363,8 +377,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-  
+  %22
   \question Use o método mestre para resolver as seguintes
   recorrências: 
   \begin{parts}
@@ -379,8 +392,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-
+  %23
   \question Dadas as recorrências dos algoritmos $A$ e
   $B$, determine a complexidade de cada um deles e compare-os
   (informe se $A$ é assintoticamente mais rápido que $B$, $B$
@@ -393,9 +405,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-
-  
+  %24
   \question Os três algoritmos a seguir resolvem um
   problema de tamanho $n$ por meio da técnica de divisão e conquista.
   Analise a complexidade de cada um deles e informe qual algoritmo é
@@ -417,7 +427,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %25
   \question Os três algoritmos a seguir computam corretamente
   $x^n$ para $x>0$ e $n \geq 0$. Mostre que os três algoritmos estão
   corretos e analise a complexidade assintótica
@@ -475,8 +485,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-
+  %26
   \question Considere o algoritmo \textsc{Heapsort} descrito a
   seguir. Mostre que o algoritmo está correto usando o seguinte
   invariante de laço: ``No começo de cada iteração do laço
@@ -505,8 +514,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-
+  %27
   \question Analise a complexidade dos seguintes algoritmos:
   \begin{parts}
     \part
@@ -565,7 +573,7 @@ Prof. Daniel Kikuti
   \end{solution}
 
   \end{parts}
-
+  %28
   \question Assinale Verdadeiro (V) ou Falso (F). \textbf{Justifique}
   \begin{parts}
     \part \mbox{\begin{oneparcheckboxes}
@@ -633,29 +641,28 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-
+  %29
   \question Use o modelo de árvore de decisão para representar as
   comparações efetuadas pelo algoritmo \textsc{Insertion-Sort} para
   uma instância de entrada com quatro elementos.
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %30
   \question Use o modelo de árvore de decisão para representar as
   comparações efetuadas pelo algoritmo \textsc{Mergesort} para uma instância
   de entrada com três elementos.
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %31
   \question Use o modelo de árvore de decisão para representar as
   comparações efetuadas pelo algoritmo \textsc{Quicksort} para uma
   instância de entrada com três elementos.
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %32
   \question Dado um vetor de inteiros distintos e ordenados em
   ordem crescente $A = \{a_1, \ldots, a_n\}$:
   \begin{parts}
@@ -671,7 +678,7 @@ Prof. Daniel Kikuti
       Escreva a solução aqui.
     \end{solution}
   \end{parts}
-
+  %33
   \question Descreva um algoritmo baseado no paradigma de Divisão
   e Conquista que encontra o mínimo de um conjunto de $n$ números.
   Assuma que os elementos estão em um vetor $A = [1\ldots n]$.
@@ -679,7 +686,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %34
   \question Descreva um algoritmo baseado no paradigma de Divisão
   e Conquista que encontra o segundo maior elemento de um conjunto
   de $n$ números. Assuma que os elementos estão
@@ -688,8 +695,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
-  
+  %35
   \question Descreva um algoritmo que faz uso do procedimento
   \textsc{Partition} para encontrar o $k$-ésimo menor elemento.
   Isto é, o algoritmo recebe como entrada um vetor $A[1 \ldots n]$ e um
@@ -701,7 +707,7 @@ Prof. Daniel Kikuti
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %36
   \question Assuma que você possui $k$ vetores ordenados, cada um
   com $n$ elementos, e você precisa combiná-los em um único vetor
   ordenado com $k n$ elementos.
@@ -720,21 +726,21 @@ Prof. Daniel Kikuti
     Escreva a solução aqui.
   \end{solution}
   \end{parts}
-
+  %37
   \question Dado um vetor de números inteiros $A[1 \ldots n]$, determine
   quais elementos do vetor são únicos. Apresente um algoritmo eficiente.
   Faça uma análise de complexidade.
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %38
   \question Descreva um algoritmo de tempo $\Theta(n \lg n)$ que, dado
   um conjunto $S$ de $n$ números inteiros e outro número $x$, determine
   se existe dois elementos em $S$ cuja soma é exatamente $x$.
   \begin{solution}
     Escreva a solução aqui.
   \end{solution}
-
+  %39
   \question Problema da moeda falsa. Dado um conjunto de $n$ moedas,
   $n-1$ delas verdadeiras (com mesmo peso) e uma falsa (mais leve),
   descreva um algoritmo eficiente (com tempo $o(n)$) para encontrar

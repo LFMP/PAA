@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  22 APR 2018 22:05
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  23 APR 2018 23:33
  restricted system commands enabled.
 **fonte.tex
 (./fonte.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.138 seconds
+luaotfload | main : initialization completed in 0.136 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (./exam.cls
 Document Class: exam 2017/12/17 Version 2.603 by Philip Hirschhorn
@@ -1351,72 +1351,77 @@ caps10-regular.luc)(load luc: /home/lfmp/.texlive/texmf-var/luatex-cache/generic
 /fonts/otl/lmroman12-regular.luc)(load luc: /home/lfmp/.texlive/texmf-var/luatex
 -cache/generic/fonts/otl/lmroman12-bold.luc) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./logo.jpg>](load luc: /home
-/lfmp/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman7-bold.luc)
-Overfull \hbox (17.78pt too wide) in paragraph at lines 198--210
-$[]$ 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./logo.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
  []
 
-
-Overfull \hbox (17.78pt too wide) in paragraph at lines 222--233
+(load luc: /home/lfmp/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman7
+-bold.luc)
+Overfull \hbox (17.78pt too wide) in paragraph at lines 215--227
 $[]$ 
  []
 
 [2]
-Overfull \hbox (17.78pt too wide) in paragraph at lines 243--255
+Overfull \hbox (17.78pt too wide) in paragraph at lines 238--249
 $[]$ 
  []
 
 
-Overfull \hbox (17.78pt too wide) in paragraph at lines 266--278
+Overfull \hbox (17.78pt too wide) in paragraph at lines 258--270
 $[]$ 
  []
 
 
-Overfull \hbox (17.78pt too wide) in paragraph at lines 292--305
+Overfull \hbox (17.78pt too wide) in paragraph at lines 280--292
+$[]$ 
+ []
+
+
+Overfull \hbox (17.78pt too wide) in paragraph at lines 306--319
 $[]$ 
  []
 
 [3]
-Underfull \hbox (badness 1281) in paragraph at lines 334--339
+Underfull \hbox (badness 1281) in paragraph at lines 348--353
 []\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 342--347
+Underfull \hbox (badness 1281) in paragraph at lines 356--361
 []\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 350--355
+Underfull \hbox (badness 1281) in paragraph at lines 364--369
 []\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 [4]
-Overfull \hbox (7.54262pt too wide) in paragraph at lines 430--474
+Overfull \hbox (7.54262pt too wide) in paragraph at lines 440--484
  [][][] 
  []
 
 
-Overfull \hbox (17.78pt too wide) in paragraph at lines 491--503
+Overfull \hbox (17.78pt too wide) in paragraph at lines 500--512
 $[]$ 
  []
 
-
-Overfull \hbox (38.89pt too wide) in paragraph at lines 513--523
-[]$[]$ 
- []
-
-
-Overfull \hbox (38.89pt too wide) in paragraph at lines 529--546
-[]$[]$ 
- []
-
 [5]
-Overfull \hbox (38.89pt too wide) in paragraph at lines 552--562
+Overfull \hbox (38.89pt too wide) in paragraph at lines 521--531
+[]$[]$ 
+ []
+
+
+Overfull \hbox (38.89pt too wide) in paragraph at lines 537--554
+[]$[]$ 
+ []
+
+
+Overfull \hbox (38.89pt too wide) in paragraph at lines 560--570
 []$[]$ 
  []
 
@@ -1430,10 +1435,10 @@ Here is how much of LuaTeX's memory you used:
  734 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 8 attribute, 99 glue_spec, 8 attrib
 ute_list, 2 write nodes
-   avail lists: 2:1390,3:287,4:89,5:332,6:2421,7:1080,8:118,9:399,10:7,11:292
+   avail lists: 2:1169,3:331,4:92,5:267,6:2330,7:1006,8:119,9:395,10:7,11:282
  31054 multiletter control sequences out of 65536+600000
  50 fonts using 7713543 bytes
- 55i,18n,54p,406b,778s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 55i,18n,54p,406b,774s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-italic.otf></usr/share
 /texmf-dist/fonts/opentype/public/lm/lmroman7-bold.otf></usr/share/texmf-dist/fo
 nts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/opentype/
@@ -1449,7 +1454,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 am10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on fonte.pdf (8 pages, 210334 bytes).
+Output written on fonte.pdf (8 pages, 213489 bytes).
 
 PDF statistics: 127 PDF objects out of 1000 (max. 8388607)
  82 compressed objects within 1 object stream
