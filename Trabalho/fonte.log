@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  25 APR 2018 17:40
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  25 APR 2018 18:17
  restricted system commands enabled.
 **fonte.tex
 (./fonte.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.123 seconds
+luaotfload | main : initialization completed in 0.128 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (./exam.cls
 Document Class: exam 2017/12/17 Version 2.603 by Philip Hirschhorn
@@ -1473,12 +1473,12 @@ Overfull \hbox (38.88876pt too wide) in paragraph at lines 644--654
  []
 
 [7]
-Overfull \hbox (38.88876pt too wide) in paragraph at lines 660--677
+Overfull \hbox (38.88876pt too wide) in paragraph at lines 666--683
 []$[]$ 
  []
 
 
-Overfull \hbox (38.88876pt too wide) in paragraph at lines 683--693
+Overfull \hbox (38.88876pt too wide) in paragraph at lines 694--704
 []$[]$ 
  []
 
@@ -1494,7 +1494,7 @@ Here is how much of LuaTeX's memory you used:
  734 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 8 attribute, 99 glue_spec, 8 attrib
 ute_list, 2 write nodes
-   avail lists: 2:1735,3:549,4:84,5:359,6:2421,7:1449,8:145,9:744,10:7,11:292
+   avail lists: 2:1745,3:550,4:84,5:359,6:2174,7:1448,8:145,9:744,10:7,11:234
  32555 multiletter control sequences out of 65536+600000
  55 fonts using 7842303 bytes
  55i,18n,80p,406b,1011s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -1517,7 +1517,7 @@ ist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm
 /lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on fonte.pdf (10 pages, 299618 bytes).
+Output written on fonte.pdf (10 pages, 300719 bytes).
 
 PDF statistics: 137 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream

@@ -653,7 +653,13 @@ Prof. Daniel Kikuti
       \caption{\textsc{f}($n$)}
     \end{algorithm}
     \begin{solution}
-      Escreva a solução aqui.
+      \begin{tabular}{lll}
+        $2T(n-1) + \Theta(1)$ $=$
+        $\displaystyle\sum_{k=0}^{\lg n - 1} 2^k + \Theta(1)$
+        {}& $=$ &$ \frac{2^{n+1-1} - 1}{2 - 1} + \Theta(1)$ \\
+        {}& $=$ &$ 2^{n} -1 + \Theta(1)$ \\
+        {}& $=$ &$ O(2^n)$ \\
+      \end{tabular}  
     \end{solution}
     
     \part
@@ -676,7 +682,12 @@ Prof. Daniel Kikuti
       \caption{\textsc{Busca}($A[], key, min, max$)}
     \end{algorithm}
     \begin{solution}
-      Escreva a solução aqui.
+      \begin{tabular}{lll}
+        $T(\frac{n}{2}) + \Theta(1)$ $=$
+        $\displaystyle\sum_{k=0}^{\lg n - 1} 1 + \Theta(1)$
+        {}& $=$ &$ \lg n - 1 + \Theta(1)$ \\
+        {}& $=$ &$ O(\lg n)$ \\
+      \end{tabular}  
     \end{solution}
   
     \part
@@ -692,8 +703,14 @@ Prof. Daniel Kikuti
       \caption{\textsc{Recursive}($n$)}
     \end{algorithm}
     \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
+      \begin{tabular}{lll}
+        $T(\frac{n}{3}) + \Theta(n^3)$ $=$
+        $n^3 \displaystyle\sum_{k=0}^{n - 1} {\frac{1}{27}}^k + \Theta(n^3)$
+        {}& $=$ &$ n^3 \frac{1}{1 - \frac{1}{27}} + \Theta(n^3)$ \\
+        {}& $=$ &$ n^3 \frac{26}{27} + \Theta(n^3)$ \\
+        {}& $=$ &$ O(n^3)$ \\
+      \end{tabular}
+    \end{solution}
 
   \end{parts}
   %28
