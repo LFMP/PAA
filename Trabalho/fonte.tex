@@ -14,9 +14,10 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{float}
+\usepackage{float}  
 \usepackage{color}
 \usepackage[T1]{fontenc}
+\usepackage{verbatim}
 
 \usetikzlibrary{arrows,calc, snakes, backgrounds,positioning}
 
@@ -801,26 +802,21 @@ Prof. Daniel Kikuti
             \node [int] (ki3) [node distance=2cm,below left=of ki1] {$a_1 : a_3$};
             \node [int] (ki7) [node distance=1.5cm and -1cm,below right=of ki1] {$a_1,a_2,a_3$};
             \node [int] (ki4) [node distance=1.5cm and -1cm,below right=of ki2] {$a_1 : a_3$};
-             \node [int] (ki9) [node distance=1.5cm and -1cm,below left=of ki4] {$a_2,a_3,a_1$};
-              \node [int] (ki10) [node distance=1.5cm and -1cm,below right=of ki4] {$a_3,a_2,a_1$};
+            \node [int] (ki9) [node distance=1.5cm and -1cm,below left=of ki4] {$a_2,a_3,a_1$};
+            \node [int] (ki10) [node distance=1.5cm and -1cm,below right=of ki4] {$a_3,a_2,a_1$};
             \node [int] (ki5) [node distance=1.5cm and -1cm,below left=of ki3] {$a_2,a_1,a_3$};
             \node [int] (ki6) [node distance=1.5cm and -1cm,below right=of ki3] {$a_3,a_2,a_1$};
             \node [int] (ki8) [node distance=2.5cm and -1cm,below left=of ki2] {$a_1,a_3,a_2$};
-
             \draw[->] (kp) -- ($(kp.south)+(0,-0.75)$) -| (ki1) node[above,pos=0.25] {$\leq$} ;
             \draw[->] (ki1) -- ($(ki1.south)+(0,-0.75)$) -| (ki3) node[above,pos=0.25] {$\leq$} ;;
             \draw[->] (ki1) -- ($(ki1.south)+(0,-0.75)$) -| (ki7) node[above,pos=0.25] {$>$};
             \draw[->] (ki3) -- ($(ki3.south)+(0,-0.75)$) -| (ki5) node[above,pos=0.25] {$\leq$};
             \draw[->] (ki3) -- ($(ki3.south)+(0,-0.75)$) -| (ki6) node[above,pos=0.25] {$>$};
             \draw[->] (kp) -- ($(kp.south)+(0,-0.75)$) -| (ki2) node[above,pos=0.25] {$>$};
-
-
             \draw[->] (ki2) -- ($(ki2.south)+(0,-0.75)$) -| (ki4) node[above,pos=0.25] {$>$};
             \draw[->] (ki2) -- ($(ki2.south)+(0,-0.75)$) -| (ki8) node[above,pos=0.25] {$\leq$};
             \draw[->] (ki4) -- ($(ki4.south)+(0,-0.75)$) -| (ki9) node[above,pos=0.25] {$\leq$};
             \draw[->] (ki4) -- ($(ki4.south)+(0,-0.75)$) -| (ki10) node[above,pos=0.25] {$>$};
-
-
           \end{tikzpicture}
         \end{figure}
   \end{solution}
@@ -853,7 +849,31 @@ Prof. Daniel Kikuti
   Assuma que os elementos estão em um vetor $A = [1\ldots n]$.
   Mostre que o algoritmo está correto e analise sua complexidade.
   \begin{solution}
-    Escreva a solução aqui.
+    \begin{algorithm}[H]
+      \NoCaptionOfAlgo
+      \DontPrintSemicolon
+      \If {$inicio = fim$}{
+        \Return A[inicio]\;
+      }\Else{
+        $meio \leftarrow inicio + ((fim - inicio)/2)$\;
+        $left = $\textsc{MinA}($A[\quad], inicio, meio$)\;
+        $right = $\textsc{MinA}($A[\quad], meio + 1, fim$)\;
+        \If{$left \geq right$}{
+          \Return $y$\;
+        }
+        \Else{
+          \Return $x$\;
+        }
+      }
+      \caption{\textsc{MinA}($A[\quad], inicio, fim$)}
+    \end{algorithm}
+    \begin{tabular}{lll}
+        $2T(n-1) + \Theta(1)$ $=$
+        $\displaystyle\sum_{k=0}^{\lg n - 1} 2^k + \Theta(1)$
+        {}& $=$ &$ \frac{2^{n+1} - 1}{2 - 1} + \Theta(1)$ \\
+        {}& $=$ &$ 2^{n+1} -1 + \Theta(1)$ \\
+        {}& $=$ &$ O(2^{n+1})$ \\
+    \end{tabular}   
   \end{solution}
   %34
   \question Descreva um algoritmo baseado no paradigma de Divisão
