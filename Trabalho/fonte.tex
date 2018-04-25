@@ -16,6 +16,16 @@
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{color}
+\usepackage[T1]{fontenc}
+
+\usetikzlibrary{arrows,calc, snakes, backgrounds,positioning}
+
+\tikzstyle{intt}=[draw,text centered,minimum size=6em,text width=5.25cm,text height=0.34cm]
+\tikzstyle{intl}=[draw,text centered,minimum size=2em,text width=2.75cm,text height=0.34cm]
+\tikzstyle{int}=[draw,minimum size=2.5em,text centered,text width=3.5cm]
+\tikzstyle{intg}=[draw,minimum size=3em,text centered,text width=6.cm]
+\tikzstyle{sum}=[draw,shape=circle,inner sep=2pt,text centered,node distance=3.5cm]
+\tikzstyle{summ}=[drawshape=circle,inner sep=4pt,text centered,node distance=3.cm]
 
 
 \usepackage[ruled,vlined,noend,linesnumbered]{algorithm2e}
@@ -54,7 +64,6 @@
 
 \begin{center}
 \begin{minipage}[c][1.5cm][c]{1.5cm}
-\includegraphics[height=1.5cm]{logo.jpg}
 \end{minipage}
 \begin{minipage}[c][1.5cm][c]{12cm} 
 \textsc{\Large Universidade Estadual de Maringá} \\
@@ -216,8 +225,6 @@ Prof. Daniel Kikuti
       {}& $=$ &$ 0 + 0 + 0 + a_k $ \\
       {}& $=$ &$ a_k. $\\
     \end{tabular}
-
-    Como $a_k$ > 0 \Rightarrow $p(n) = \Theta(n^k)$.
   \end{solution}
   %11
   \question Papai Noel resolveu antecipar seu presente de
@@ -275,7 +282,7 @@ Prof. Daniel Kikuti
       {}& $=$ &$ 2n -1$ \\
     \end{tabular}
 
-    \therefore O algorítimo irá imprimir a mensagem $2n-1$ vezes uma entrada $n$.
+    $\therefore$ O algorítimo irá imprimir a mensagem $2n-1$ vezes uma entrada $n$ e $T(n)= \Theta(n)$.
   \end{solution}
   %13
   \question Seja $count$ o número total de iterações feitas pelo
@@ -480,31 +487,31 @@ Prof. Daniel Kikuti
   \end{parts}
   \begin{solution}
     \textbf{a)$T(n) = 3T(n/2) + n\lg n$}\\
-      $\log_b a = \lg 3 \simeq 1.58$ e $f(n) = n\lg n$ \Rightarrow  Caso 1 do Método Mestre\\
+      $\log_b a = \lg 3 \simeq 1.58$ e $f(n) = n\lg n$ $\Rightarrow$  Caso 1 do Método Mestre\\
       $f(n) \in O(n^{\lg 3 - \epsilon})$, com $\epsilon = 0.08 \Rightarrow f(n) \in O(n^{\frac{3}{2}})$
       $\Rightarrow T(n) = \Theta(n^{\lg 3})$\\
     \textbf{b)$T(n) = 3T(n/2) + n^2$}\\
-      $\log_b a = \lg 3 \simeq 1.58$ e $f(n) = n^2$ \Rightarrow  Caso 3 do Método Mestre\\
+      $\log_b a = \lg 3 \simeq 1.58$ e $f(n) = n^2$ $\Rightarrow$  Caso 3 do Método Mestre\\
       $f(n) \in O(n^{\lg 3 + \epsilon})$, com $\epsilon = 0.42$
       $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2)$\\
     \textbf{c)$T(n) = 4T(n/2) + n^2$}\\
-      $\log_b a = 2 $ e $f(n) = n^2$ \Rightarrow  Caso 2 do Método Mestre\\
+      $\log_b a = 2 $ e $f(n) = n^2$ $\Rightarrow$  Caso 2 do Método Mestre\\
       $f(n) \in \Theta(n^2)$
       $\Rightarrow T(n) = \Theta(n^2 \lg n)$\\
     \textbf{d)$T(n) = 4T(n/2) + n^2\sqrt{n}$}\\
-      $\log_b a = 2 $ e $f(n) = n^2.\sqrt{n} = n^{\frac{3}{2}}$ \Rightarrow  Caso 3 do Método Mestre\\
+      $\log_b a = 2 $ e $f(n) = n^2.\sqrt{n} = n^{\frac{3}{2}}$ $\Rightarrow$  Caso 3 do Método Mestre\\
       $f(n) \in \Theta(n^{2 + \epsilon})$, com $\epsilon = 0.5$
       $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2.\sqrt{n})$\\
     \textbf{e)$T(n) = 5T(n/5) + n$}\\
-      $\log_b a = 1 $ e $f(n) = n$ \Rightarrow  Caso 2 do Método Mestre\\
+      $\log_b a = 1 $ e $f(n) = n$ $\Rightarrow$  Caso 2 do Método Mestre\\
       $f(n) \in \Theta(n)$
       $\Rightarrow T(n) = \Theta(n\lg n)$\\
     \textbf{f)$T(n) = 6T(n/3) + n^2$}\\
-      $\log_b a = \log_3 6 \simeq 1.63$ e $f(n) = n^2$ \Rightarrow  Caso 3 do Método Mestre\\
+      $\log_b a = \log_3 6 \simeq 1.63$ e $f(n) = n^2$ $\Rightarrow$  Caso 3 do Método Mestre\\
       $f(n) \in \Omega(n^{\log_3 6 + \epsilon})$, com $\epsilon = 0.33$
       $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2)$\\
     \textbf{g)$T(n) = 9T(n/2) + n^3$}\\
-      $\log_b a = \lg 9 \simeq 3.16$ e $f(n) = n^3$ \Rightarrow  Caso 1 do Método Mestre\\
+      $\log_b a = \lg 9 \simeq 3.16$ e $f(n) = n^3$ $\Rightarrow$  Caso 1 do Método Mestre\\
       $f(n) \in O(n^{\lg 9 - \epsilon})$, com $\epsilon = 0.16 \Rightarrow f(n) \in O(n^3)$
       $\Rightarrow T(n) = \Theta(n^{\lg 3})$
   \end{solution}
@@ -769,7 +776,36 @@ Prof. Daniel Kikuti
   comparações efetuadas pelo algoritmo \textsc{Mergesort} para uma instância
   de entrada com três elementos.
   \begin{solution}
-    Escreva a solução aqui.
+        \begin{figure}[H]
+          \begin{tikzpicture}[scale=0.68, transform shape]
+            \node [intg] (kp)  {$a_2 : a_3$};
+            \node [int] (ki1) [node distance=1.5cm and -1cm,below left=of kp] {$a_2 : a_1$};
+            \node [int] (ki2) [node distance=1.5cm and -1cm,below right=of kp] {$a_1 : a_2$};
+            \node [int] (ki3) [node distance=2cm,below left=of ki1] {$a_1 : a_3$};
+            \node [int] (ki7) [node distance=1.5cm and -1cm,below right=of ki1] {$a_1,a_2,a_3$};
+            \node [int] (ki4) [node distance=1.5cm and -1cm,below right=of ki2] {$a_1 : a_3$};
+             \node [int] (ki9) [node distance=1.5cm and -1cm,below left=of ki4] {$a_2,a_3,a_1$};
+              \node [int] (ki10) [node distance=1.5cm and -1cm,below right=of ki4] {$a_3,a_2,a_1$};
+            \node [int] (ki5) [node distance=1.5cm and -1cm,below left=of ki3] {$a_2,a_1,a_3$};
+            \node [int] (ki6) [node distance=1.5cm and -1cm,below right=of ki3] {$a_3,a_2,a_1$};
+            \node [int] (ki8) [node distance=2.5cm and -1cm,below left=of ki2] {$a_1,a_3,a_2$};
+
+            \draw[->] (kp) -- ($(kp.south)+(0,-0.75)$) -| (ki1) node[above,pos=0.25] {$\leq$} ;
+            \draw[->] (ki1) -- ($(ki1.south)+(0,-0.75)$) -| (ki3) node[above,pos=0.25] {$\leq$} ;;
+            \draw[->] (ki1) -- ($(ki1.south)+(0,-0.75)$) -| (ki7) node[above,pos=0.25] {$>$};
+            \draw[->] (ki3) -- ($(ki3.south)+(0,-0.75)$) -| (ki5) node[above,pos=0.25] {$\leq$};
+            \draw[->] (ki3) -- ($(ki3.south)+(0,-0.75)$) -| (ki6) node[above,pos=0.25] {$>$};
+            \draw[->] (kp) -- ($(kp.south)+(0,-0.75)$) -| (ki2) node[above,pos=0.25] {$>$};
+
+
+            \draw[->] (ki2) -- ($(ki2.south)+(0,-0.75)$) -| (ki4) node[above,pos=0.25] {$>$};
+            \draw[->] (ki2) -- ($(ki2.south)+(0,-0.75)$) -| (ki8) node[above,pos=0.25] {$\leq$};
+            \draw[->] (ki4) -- ($(ki4.south)+(0,-0.75)$) -| (ki9) node[above,pos=0.25] {$\leq$};
+            \draw[->] (ki4) -- ($(ki4.south)+(0,-0.75)$) -| (ki10) node[above,pos=0.25] {$>$};
+
+
+          \end{tikzpicture}
+        \end{figure}
   \end{solution}
   %31
   \question Use o modelo de árvore de decisão para representar as
@@ -866,5 +902,4 @@ Prof. Daniel Kikuti
   \end{solution}
   
 \end{questions}
-
 \end{document}
