@@ -206,15 +206,17 @@ Prof. Daniel Kikuti
   é uma constante e $a_k > 0$, mostre que $p(n) = \Theta(n^k)$.
   \begin{solution}
     Usando limite, devemos mostrar que: L = $\displaystyle\lim_{n\to\infty} \frac{\sum_{i=0}^{k} a_{i}n^{i}}{n^k}, 0 < L < \infty$\\
+    \begin{tabular}{lll}
+      $ L $&  $=$ &$ \displaystyle\lim_{n\to\infty} \frac{\sum_{i=0}^{k} a_{i}n^{i}}{n^k}$ \\
+      {}& $=$ &$ \displaystyle\lim_{n\to\infty} \frac{a_0 n^0 + a_1 n^1 + a_2 n^2 + ... + a_k n^k}{n^k}$ \\
+      {}& $=$ &$ \displaystyle\lim_{n\to\infty} \frac{a_0 n^0}{n^k} + 
+                \displaystyle\lim_{n\to\infty} \frac{a_1 n^1}{n^k} + 
+                \displaystyle\lim_{n\to\infty} \frac{a_2 n^2}{n^k} + ... + 
+                \displaystyle\lim_{n\to\infty} \frac{a_k n^k}{n^k} $\\
+      {}& $=$ &$ 0 + 0 + 0 + a_k $ \\
+      {}& $=$ &$ a_k. $\\
+    \end{tabular}
 
-    $ L = \displaystyle\lim_{n\to\infty} \frac{\sum_{i=0}^{k} a_{i}n^{i}}{n^k} \\
-        = \displaystyle\lim_{n\to\infty} \frac{a_0 n^0 + a_1 n^1 + a_2 n^2 + ... + a_k n^k}{n^k} \\
-        = \displaystyle\lim_{n\to\infty} \frac{a_0 n^0}{n^k} + 
-          \displaystyle\lim_{n\to\infty} \frac{a_1 n^1}{n^k} + 
-          \displaystyle\lim_{n\to\infty} \frac{a_2 n^2}{n^k} + ... + 
-          \displaystyle\lim_{n\to\infty} \frac{a_k n^k}{n^k} \\
-        = 0 + 0 + 0 + a_k \\
-        = a_k.$ \\
     Como $a_k$ > 0 \Rightarrow $p(n) = \Theta(n^k)$.
   \end{solution}
   %11
@@ -261,7 +263,19 @@ Prof. Daniel Kikuti
     \caption{\textsc{Prog}($n$, $expr$)}
   \end{algorithm}
   \begin{solution}
-    Escreva a solução aqui.
+    A cada repetição do While a linha 3 executará $\frac{n}{2}$ a cada iteração. O While executa $\lg n$ vezes,
+    então a linha 3 será executada $\displaystyle\sum_{k=1}^{\lg n} \dfrac{n}{2^k}$ . Encontraremos a fórmula fechada
+    para esse somatório:\\
+    \begin{tabular}{lll}
+      $ \displaystyle\sum_{k=1}^{\lg n} \dfrac{n}{2^k} $&  $=$ &$ n\displaystyle\sum_{k=1}^{\lg n} {\dfrac{1}{2}}^k $ \\
+      {}& $=$ &$ n\frac{\frac{1}{2}({\frac{1}{2}}^{\lg n} - {\frac{1}{2}}^{-1})}{\frac{1}{2} - 1}$ \\
+      {}& $=$ &$ n\frac{\frac{1}{2}({n}^{\lg {\frac{1}{2}}} - {2})}{-\frac{1}{2}}$ \\
+      {}& $=$ &$ n\frac{\frac{1}{2}({n}^{\lg 1 - \lg 2} - {2})}{-\frac{1}{2}}$ \\
+      {}& $=$ &$ -n({n^{{\lg 1} - {\lg 2}}} - 2)$ \\
+      {}& $=$ &$ 2n -1$ \\
+    \end{tabular}
+
+    \therefore O algorítimo irá imprimir a mensagem $2n-1$ vezes uma entrada $n$.
   \end{solution}
   %13
   \question Seja $count$ o número total de iterações feitas pelo
@@ -359,13 +373,53 @@ Prof. Daniel Kikuti
     \part $T(n) = 2T(n/2) + n \lg n$
   \end{parts}
   \begin{solution}
-    a)$T(n) = 8T(n/2) + \Theta(n^2)$\\
-    \begin{tabular}{llll}
-      {}&Supondo que $T(n) \in O(n^3 - n^2)$ e substituindo em $T(n):$ &{}\\
-      {}& {}& $8c(\frac{n^3}{8} - \frac{n^2}{4}) + \Theta(n^2)$ \\
-      {}&  $c.{n^3} - 2.{n^2} + d.n^2$ &{} &{}\\
-      {}&  $c.{n^3} - n^2({2c -d}), p/ c \leq \frac{d}{2} \Rightarrow T(n) = O(n^3)$&{} &{}\\
+    \textbf{a)$T(n) = 8T(n/2) + \Theta(n^2)$}\\
+
+    Supondo que $T(n) \in O(n^3 - n^2)$ e substituindo em $T(n):$\\
+    \begin{tabular}{lll}
+      $T(n) $& $=$ &$ 8T(n/2) + \Theta(n^2)$ \\
+      {}& $=$ &$ 8c(\frac{n^3}{8} - \frac{n^2}{4}) + \Theta(n^2)$\\
+      {}& $=$ &$ c.{n^3} - 2.{n^2} + d.n^2$ \\
+      {}& $=$ &$ c.{n^3} - n^2({2c -d})$\\
     \end{tabular}
+
+    $p/ c \geq \frac{d}{2} \Rightarrow T(n) = O(n^3)$\\
+
+    \textbf{b)$T(n) = 7T(n/2) + \Theta(n^2)$}\\
+
+    Supondo que $T(n) \in O(n^{\lg 7} - n^2)$ e substituindo em $T(n):$\\
+    \begin{tabular}{lll}
+      $T(n) $& $=$ &$ 7T(n/2) + \Theta(n^2)$ \\
+      {}& $=$ &$ 7c({(\frac{n}{2}})^{\lg 7} - \frac{n^2}{4}) + \Theta(n^2)$\\
+      {}& $=$ &$ 7c({7^{\lg \frac{n}{2}} - \frac{n^2}{4}}) + \Theta(n^2)$\\
+      {}& $=$ &$ c{7^{\lg n} - \frac{7n^2}{4}} + \Theta(n^2)$\\
+      {}& $=$ &$ c{7^{\lg n} - n^2(\frac{7}{4}} - d)$\\
+    \end{tabular}
+
+    $p/ c \geq \frac{7}{4} \Rightarrow T(n) = O(n^{\lg 7})$\\
+
+    \textbf{c)$T(n) = T(n/4) + 1$}\\
+
+    Supondo que $T(n) \in O(\lg n)$ e substituindo em $T(n):$\\
+    \begin{tabular}{lll}
+      $T(n) $& $=$ &$ T(n) = T(n/4) + 1$ \\
+      {}& $=$ &$ c(\frac{1}{4} {\lg n} + 1$\\
+      {}& $=$ &$ c(\frac{1}{4} {\lg n} + 1$\\
+      {}& $=$ &$ \frac{1}{4}c{\lg n} + 1$\\
+    \end{tabular}
+
+    $p/ c > 4 \Rightarrow T(n) = O(n^{\lg n})$\\
+
+    \textbf{d)$T(n) = 2T(n/2) + n\lg n$}\\
+
+    Supondo que $T(n) \in O(n\lg^2 n)$ e substituindo em $T(n):$\\
+    \begin{tabular}{lll}
+      $T(n) $& $=$ &$ T(n) = 2T(n/2) + n\lg n$ \\
+      {}& $=$ &$ 2c(\frac{n}{2} \lg^2 n) + n\lg n$\\
+      {}& $=$ &$ cn\lg^2 n + n\lg n$\\
+    \end{tabular}
+
+    $p/ c > 0 \Rightarrow T(n) = O(n\lg^2 n)$\\    
   \end{solution}
   %17
   \question Use árvore de recorrência para estimar um limite superior
@@ -425,7 +479,34 @@ Prof. Daniel Kikuti
     \part $T(n) = 9T(n/2) + n^3$
   \end{parts}
   \begin{solution}
-    Escreva a solução aqui.
+    \textbf{a)$T(n) = 3T(n/2) + n\lg n$}\\
+      $\log_b a = \lg 3 \simeq 1.58$ e $f(n) = n\lg n$ \Rightarrow  Caso 1 do Método Mestre\\
+      $f(n) \in O(n^{\lg 3 - \epsilon})$, com $\epsilon = 0.08 \Rightarrow f(n) \in O(n^{\frac{3}{2}})$
+      $\Rightarrow T(n) = \Theta(n^{\lg 3})$\\
+    \textbf{b)$T(n) = 3T(n/2) + n^2$}\\
+      $\log_b a = \lg 3 \simeq 1.58$ e $f(n) = n^2$ \Rightarrow  Caso 3 do Método Mestre\\
+      $f(n) \in O(n^{\lg 3 + \epsilon})$, com $\epsilon = 0.42$
+      $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2)$\\
+    \textbf{c)$T(n) = 4T(n/2) + n^2$}\\
+      $\log_b a = 2 $ e $f(n) = n^2$ \Rightarrow  Caso 2 do Método Mestre\\
+      $f(n) \in \Theta(n^2)$
+      $\Rightarrow T(n) = \Theta(n^2 \lg n)$\\
+    \textbf{d)$T(n) = 4T(n/2) + n^2\sqrt{n}$}\\
+      $\log_b a = 2 $ e $f(n) = n^2.\sqrt{n} = n^{\frac{3}{2}}$ \Rightarrow  Caso 3 do Método Mestre\\
+      $f(n) \in \Theta(n^{2 + \epsilon})$, com $\epsilon = 0.5$
+      $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2.\sqrt{n})$\\
+    \textbf{e)$T(n) = 5T(n/5) + n$}\\
+      $\log_b a = 1 $ e $f(n) = n$ \Rightarrow  Caso 2 do Método Mestre\\
+      $f(n) \in \Theta(n)$
+      $\Rightarrow T(n) = \Theta(n\lg n)$\\
+    \textbf{f)$T(n) = 6T(n/3) + n^2$}\\
+      $\log_b a = \log_3 6 \simeq 1.63$ e $f(n) = n^2$ \Rightarrow  Caso 3 do Método Mestre\\
+      $f(n) \in \Omega(n^{\log_3 6 + \epsilon})$, com $\epsilon = 0.33$
+      $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2)$\\
+    \textbf{g)$T(n) = 9T(n/2) + n^3$}\\
+      $\log_b a = \lg 9 \simeq 3.16$ e $f(n) = n^3$ \Rightarrow  Caso 1 do Método Mestre\\
+      $f(n) \in O(n^{\lg 9 - \epsilon})$, com $\epsilon = 0.16 \Rightarrow f(n) \in O(n^3)$
+      $\Rightarrow T(n) = \Theta(n^{\lg 3})$
   \end{solution}
   %23
   \question Dadas as recorrências dos algoritmos $A$ e
