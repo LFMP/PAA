@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  24 APR 2018 09:16
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  24 APR 2018 21:59
  restricted system commands enabled.
 **fonte.tex
 (./fonte.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.127 seconds
+luaotfload | main : initialization completed in 0.130 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (./exam.cls
 Document Class: exam 2017/12/17 Version 2.603 by Philip Hirschhorn
@@ -1349,89 +1349,89 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )(load luc: /home/lfmp/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman
 caps10-regular.luc)(load luc: /home/lfmp/.texlive/texmf-var/luatex-cache/generic
 /fonts/otl/lmroman12-regular.luc)(load luc: /home/lfmp/.texlive/texmf-var/luatex
--cache/generic/fonts/otl/lmroman12-bold.luc) [1
+-cache/generic/fonts/otl/lmroman12-bold.luc)
+Underfull \hbox (badness 10000) in paragraph at lines 96--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--104
+
+ []
+
+[1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./logo.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
 
  []
 
-(load luc: /home/lfmp/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmroman7
--bold.luc)
-Overfull \hbox (17.78pt too wide) in paragraph at lines 215--227
-$[]$ 
- []
-
-[2]
-Overfull \hbox (17.78pt too wide) in paragraph at lines 238--249
+[2](load luc: /home/lfmp/.texlive/texmf-var/luatex-cache/generic/fonts/otl/lmrom
+an7-bold.luc)
+Overfull \hbox (17.78pt too wide) in paragraph at lines 228--240
 $[]$ 
  []
 
 
-Overfull \hbox (17.78pt too wide) in paragraph at lines 258--270
+Overfull \hbox (17.78pt too wide) in paragraph at lines 251--262
 $[]$ 
  []
 
 
-Overfull \hbox (17.78pt too wide) in paragraph at lines 280--292
+Overfull \hbox (17.78pt too wide) in paragraph at lines 271--283
 $[]$ 
  []
 
 
-Overfull \hbox (17.78pt too wide) in paragraph at lines 306--319
+Overfull \hbox (17.78pt too wide) in paragraph at lines 293--305
+$[]$ 
+ []
+
+
+Overfull \hbox (17.78pt too wide) in paragraph at lines 319--332
 $[]$ 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 321--326
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 329--334
-
- []
-
-
-Underfull \hbox (badness 1281) in paragraph at lines 361--366
-[]\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
-li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
- []
-
-
-Underfull \hbox (badness 1281) in paragraph at lines 369--374
+Underfull \hbox (badness 1281) in paragraph at lines 383--388
 []\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 [4]
-Underfull \hbox (badness 1281) in paragraph at lines 377--382
+Underfull \hbox (badness 1281) in paragraph at lines 391--396
 []\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 
-Overfull \hbox (7.54262pt too wide) in paragraph at lines 453--497
- [][][] 
+Underfull \hbox (badness 1281) in paragraph at lines 399--404
+[]\TU/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
+li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 [5]
-Overfull \hbox (17.78pt too wide) in paragraph at lines 513--525
+Overfull \hbox (7.54262pt too wide) in paragraph at lines 475--519
+ [][][] 
+ []
+
+
+Overfull \hbox (17.78pt too wide) in paragraph at lines 535--547
 $[]$ 
  []
 
 
-Overfull \hbox (38.89pt too wide) in paragraph at lines 534--544
+Overfull \hbox (38.89pt too wide) in paragraph at lines 556--566
 []$[]$ 
  []
 
 
-Overfull \hbox (38.89pt too wide) in paragraph at lines 550--567
+Overfull \hbox (38.89pt too wide) in paragraph at lines 572--589
 []$[]$ 
  []
 
 
-Overfull \hbox (38.89pt too wide) in paragraph at lines 573--583
+Overfull \hbox (38.89pt too wide) in paragraph at lines 595--605
 []$[]$ 
  []
 
@@ -1445,7 +1445,7 @@ Here is how much of LuaTeX's memory you used:
  734 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 8 attribute, 99 glue_spec, 8 attrib
 ute_list, 2 write nodes
-   avail lists: 2:1483,3:331,4:91,5:322,6:2684,7:1011,8:126,9:425,10:7,11:340
+   avail lists: 2:1494,3:381,4:84,5:327,6:2683,7:1015,8:146,9:506,10:7,11:335
  31054 multiletter control sequences out of 65536+600000
  50 fonts using 7713543 bytes
  55i,18n,54p,406b,774s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -1464,7 +1464,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
 am10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on fonte.pdf (9 pages, 216787 bytes).
+Output written on fonte.pdf (9 pages, 219835 bytes).
 
 PDF statistics: 130 PDF objects out of 1000 (max. 8388607)
  84 compressed objects within 1 object stream

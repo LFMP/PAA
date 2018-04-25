@@ -90,10 +90,23 @@ Prof. Daniel Kikuti
     \end{tabular}
   \end{center}
   \begin{solution}
-    a) $\displaystyle\lim_{n\to\infty} \frac{\lg^k n}{n^{\epsilon}} = \infty \to f(n) = \Omega(g(n))$ \\
-    b) $\displaystyle\lim_{n\to\infty} \frac{n^k}{c^n} = 0 \to f(n) = O(g(n))$ \\
-    c) $\displaystyle\lim_{n\to\infty} \frac{2^n}{2^{n/2}} = \infty \to f(n) = \Omega(g(n))$ \\
-    d) $\displaystyle\lim_{n\to\infty} \frac{n^{\lg c}}{c^{\lg n}} = 1 \to f(n) = \Theta(g(n))$
+    Usando limite para analisar qual complexidade $f(n)$ corresponde em $g(n)$ aplicamos: 
+    L =  $\displaystyle\lim_{n\to\infty} \frac{f(n)}{g(n)}$
+
+    a) $\displaystyle\lim_{n\to\infty} \frac{\lg^k n}{n^{\epsilon}} = \displaystyle\lim_{n\to\infty} n^{-\epsilon}\lg^k n
+      = \displaystyle\lim_{n\to\infty} n^{-\epsilon} . \displaystyle\lim_{n\to\infty} \lg^k n 
+      = \infty \Rightarrow f(n) = \Omega(g(n))$ \\
+
+    b) $\displaystyle\lim_{n\to\infty} \frac{n^k}{c^n} = \displaystyle\lim_{n\to\infty} \frac{\log_n n^k}{\log_n c^n}
+      = \displaystyle\lim_{n\to\infty} \frac{k}{\log_n c^n} \\ \\
+      Como \displaystyle\lim_{n\to\infty} \log_n c^n = \infty \\
+       \\\displaystyle\lim_{n\to\infty} \frac{k}{\log_n c^n} = 0 \Rightarrow f(n) = O(g(n))$ \\
+
+    c) $\displaystyle\lim_{n\to\infty} \frac{2^n}{2^{n/2}} = \displaystyle\lim_{n\to\infty} 2^n.{2^{-\frac{n}{2}}}
+      = \displaystyle\lim_{n\to\infty} 2^{\frac{n}{2}} = \infty \Rightarrow f(n) = \Omega(g(n))$
+
+    d) $\displaystyle\lim_{n\to\infty} \frac{n^{\lg c}}{c^{\lg n}} = \displaystyle\lim_{n\to\infty} \frac{n^{\lg c}}{n^{\lg c}}
+      = \displaystyle\lim_{n\to\infty} 1 = 1 \Rightarrow f(n) = \Theta(g(n))$
   \end{solution}
   %02
   \question Para cada item a seguir, assinale \textbf{V}erdadeiro 
@@ -123,11 +136,11 @@ Prof. Daniel Kikuti
   \end{parts}
   \begin{solution}
     a) $\displaystyle\lim_{n\to\infty} \frac{\log_{16} n}{\lg n} = \frac{1}{4} \to f(n) = \Theta(g(n))$ \\
-    b) $\displaystyle\lim_{n\to\infty} \frac{2^{n+a}}{2^{2n}} = 0 \to f(n) = 2^{n+a} \in O(2^{2n})$ \\
-    c) $\displaystyle\lim_{n\to\infty} \frac{\frac{n^2}{4} -3n - 16}{n^2} = \frac{1}{4} \to f(n) = \frac{n^2}{4} -3n - 16 
-        \in \Theta(n^2) =  O(n^2) \land  \Omega(n^2)$ \\
-    d) $\displaystyle\lim_{n\to\infty} \frac{7n^2 +13n}{n^2} = 7 \to f(n) = \frac{7n^2 +13n}{n^2}
-        \in \Theta(n^2) =  O(n^2) \land  \Omega(n^2)$
+    b) $\displaystyle\lim_{n\to\infty} \frac{2^{n+a}}{2^{2n}} = 0 \Rightarrow f(n) = 2^{n+a} \in O(2^{2n})$ \\
+    c) $\displaystyle\lim_{n\to\infty} \frac{\frac{n^2}{4} -3n - 16}{n^2} = \frac{1}{4} \Rightarrow f(n) = \frac{n^2}{4} -3n - 16 
+        \in \Theta(n^2) =  O(n^2) \land  \Omega(n^2)  \Rightarrow f(n) \in \Omega(n^2)$\\
+    d) $\displaystyle\lim_{n\to\infty} \frac{7n^2 +13n}{n^2} = 7 \to f(n) = 7n^2 +13n
+        \in \Theta(n^2) =  O(n^2) \land  \Omega(n^2) \Rightarrow f(n) \in O(n^2)$
   \end{solution}
   %03
   \question Mostre usando as definições de notação assintótica:
@@ -202,7 +215,7 @@ Prof. Daniel Kikuti
           \displaystyle\lim_{n\to\infty} \frac{a_k n^k}{n^k} \\
         = 0 + 0 + 0 + a_k \\
         = a_k.$ \\
-    Como $a_k$ > 0 => $p(n) = \Theta(n^k)$.
+    Como $a_k$ > 0 \Rightarrow $p(n) = \Theta(n^k)$.
   \end{solution}
   %11
   \question Papai Noel resolveu antecipar seu presente de
@@ -318,20 +331,23 @@ Prof. Daniel Kikuti
     \caption{\textsc{Prog}($n$)}
   \end{algorithm}
   \begin{solution}
-    $ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k+1)(n-k)}{2} $  $=$ $ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k)^2 + (n-k)}{2} $\\
-    {} $=$ $ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k)^2}{2} + \displaystyle\sum_{k=1}^{n-1}  \dfrac{n}{2} - \displaystyle\sum_{k=1}^{n-1} \dfrac{k}{2} $ \\
-    {} $=$ $ \dfrac{1}{2}\left[ \displaystyle\sum_{k=1}^{n-1} k ^2 \right] + \dfrac{1}{2} \left[ n(n-1) - \dfrac{n(n-1)}{2} \right]  $\\ 
-    {} $=$ $ \dfrac{1}{2} \left[ \displaystyle\sum_{k=1}^{n-1} k^2 \right] + \dfrac{n(n-1)}{4} $\\
-    {} $=$ $ \dfrac{1}{2} \left[ \displaystyle\sum_{k=1}^{n-1} k^2 \right] + \dfrac{n^2 -n}{4} $\\
+    \begin{tabular}{lll}
+      $ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k+1)(n-k)}{2} $&  $=$ &$ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k)^2 + (n-k)}{2} $\\
+      {}& $=$ &$ \displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k)^2}{2} + \displaystyle\sum_{k=1}^{n-1}  \dfrac{n}{2} - \displaystyle\sum_{k=1}^{n-1} \dfrac{k}{2} $ \\
+      {}& $=$ &$ \dfrac{1}{2}\left[ \displaystyle\sum_{k=1}^{n-1} k ^2 \right] + \dfrac{1}{2} \left[ n(n-1) - \dfrac{n(n-1)}{2} \right]  $\\ 
+      {}& $=$ &$ \dfrac{1}{2} \left[ \displaystyle\sum_{k=1}^{n-1} k^2 \right] + \dfrac{n(n-1)}{4} $\\
+      {}& $=$ &$ \dfrac{1}{2} \left[ \displaystyle\sum_{k=1}^{n-1} k^2 \right] + \dfrac{n^2 -n}{4} $\\
+    \end{tabular}
 
-    Como $\displaystyle\sum_{k=1}^{n-1} k^2 $ é a soma das $n-1$  primeiras linha do triângulo de pascal, podemos concluir
+      Como $\displaystyle\sum_{k=1}^{n-1} k^2 $ é a soma das $n-1$  primeiras linha do triângulo de pascal, podemos concluir
 
-    $\displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k+1)(n-k)}{2}$ $=$ $\dfrac{1}{2} \left[ \dfrac{n(n-1)(2n-1)}{6}\right] + \dfrac{n^2 + n}{4} $\\
-    {} $=$ $ \dfrac{(n^2 -n)(2n-1)}{12} + \dfrac{n^2 - n}{4}  $\\
-    {} $=$ $ \dfrac{2n^3 - 3n^2 + n}{12} + \dfrac{3n^2 + 3n}{12}$\\
-    {} $=$ $ \dfrac{2n^3- 2n}{12} $\\
-    {} $=$ $ \dfrac{n^3 -n}{6} $\\
-
+    \begin{tabular}{lll}
+      $\displaystyle\sum_{k=1}^{n-1} \dfrac{(n-k+1)(n-k)}{2}$& $=$ &$\dfrac{1}{2} \left[ \dfrac{n(n-1)(2n-1)}{6}\right] + \dfrac{n^2 + n}{4} $\\
+      {}& $=$ &$ \dfrac{(n^2 -n)(2n-1)}{12} + \dfrac{n^2 - n}{4}  $\\
+      {}& $=$ &$ \dfrac{2n^3 - 3n^2 + n}{12} + \dfrac{3n^2 - 3n}{12}$\\
+      {}& $=$ &$ \dfrac{2n^3- 2n}{12} $\\
+      {}& $=$ &$ \dfrac{n^3 -n}{6} $\\
+    \end{tabular}
   \end{solution}
   %16
   \question Resolva as seguintes recorrências (use o método da
@@ -343,7 +359,13 @@ Prof. Daniel Kikuti
     \part $T(n) = 2T(n/2) + n \lg n$
   \end{parts}
   \begin{solution}
-    Escreva a solução aqui.
+    a)$T(n) = 8T(n/2) + \Theta(n^2)$\\
+    \begin{tabular}{llll}
+      {}&Supondo que $T(n) \in O(n^3 - n^2)$ e substituindo em $T(n):$ &{}\\
+      {}& {}& $8c(\frac{n^3}{8} - \frac{n^2}{4}) + \Theta(n^2)$ \\
+      {}&  $c.{n^3} - 2.{n^2} + d.n^2$ &{} &{}\\
+      {}&  $c.{n^3} - n^2({2c -d}), p/ c \leq \frac{d}{2} \Rightarrow T(n) = O(n^3)$&{} &{}\\
+    \end{tabular}
   \end{solution}
   %17
   \question Use árvore de recorrência para estimar um limite superior
