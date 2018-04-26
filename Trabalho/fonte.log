@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  25 APR 2018 20:10
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  26 APR 2018 11:33
  restricted system commands enabled.
 **fonte.tex
 (./fonte.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.123 seconds
+luaotfload | main : initialization completed in 0.126 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (./exam.cls
 Document Class: exam 2017/12/17 Version 2.603 by Philip Hirschhorn
@@ -1368,146 +1368,194 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--114
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-Overfull \hbox (17.77776pt too wide) in paragraph at lines 238--250
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (17.77776pt too wide) in paragraph at lines 215--227
 $[]$ 
  []
 
 
-Overfull \hbox (17.77776pt too wide) in paragraph at lines 261--272
+Overfull \hbox (17.77776pt too wide) in paragraph at lines 235--246
+$[]$ 
+ []
+
+[2]
+Overfull \hbox (17.77776pt too wide) in paragraph at lines 267--279
 $[]$ 
  []
 
 
-Overfull \hbox (17.77776pt too wide) in paragraph at lines 293--305
+Overfull \hbox (17.77776pt too wide) in paragraph at lines 286--298
 $[]$ 
  []
 
 
-Overfull \hbox (17.77776pt too wide) in paragraph at lines 315--327
+Overfull \hbox (17.77776pt too wide) in paragraph at lines 309--322
 $[]$ 
+ []
+
+
+Underfull \vbox (badness 1490) detected at line 341
+ []
+
+
+Overfull \vbox (1.39684pt too high) detected at line 341
  []
 
 [3]
-Overfull \hbox (17.77776pt too wide) in paragraph at lines 341--354
-$[]$ 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--397
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
+Underfull \hbox (badness 10000) in paragraph at lines 375--376
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
+Underfull \hbox (badness 10000) in paragraph at lines 377--378
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 419--420
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--422
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--431
+Underfull \hbox (badness 10000) in paragraph at lines 398--399
 
  []
 
 [4]
-Underfull \hbox (badness 1275) in paragraph at lines 445--450
+Underfull \hbox (badness 1275) in paragraph at lines 410--415
 []\T1/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 453--458
+Underfull \hbox (badness 1275) in paragraph at lines 415--420
 []\T1/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
-[5]
-Underfull \hbox (badness 1275) in paragraph at lines 461--466
+
+Underfull \hbox (badness 1275) in paragraph at lines 420--425
 []\T1/lmr/m/n/10 Uti-lize o mé-todo de ár-vore de re-cur-são para su-por um 
 li-mite as-sin-tó-tico su-pe-rior para a re-cor-rên-cia
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 526.
+
+Underfull \hbox (badness 10000) in paragraph at lines 443--447
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 448--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--457
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 458--462
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--467
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--472
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 485.
 (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 526.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 485.
 
 
 (/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 526.
- [6]
-Overfull \hbox (7.54037pt too wide) in paragraph at lines 564--608
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 485.
+ [5]
+Overfull \hbox (7.54037pt too wide) in paragraph at lines 517--561
  [][][] 
  []
 
 
-Overfull \hbox (17.77776pt too wide) in paragraph at lines 624--636
+Overfull \hbox (17.77776pt too wide) in paragraph at lines 574--586
 $[]$ 
  []
 
 
-Overfull \hbox (38.88876pt too wide) in paragraph at lines 645--655
-[]$[]$ 
- []
-
-[7]
-Overfull \hbox (38.88876pt too wide) in paragraph at lines 667--684
+Overfull \hbox (38.88876pt too wide) in paragraph at lines 592--602
 []$[]$ 
  []
 
 
-Overfull \hbox (38.88876pt too wide) in paragraph at lines 695--705
+Overfull \hbox (38.88876pt too wide) in paragraph at lines 614--631
 []$[]$ 
  []
 
-[8]
-Overfull \vbox (31.936pt too high) detected at line 877
+[6]
+Overfull \hbox (38.88876pt too wide) in paragraph at lines 642--652
+[]$[]$ 
  []
 
-[9
+[7
 Missing character: There is no ; (U+003B) in font nullfont!
-] [10]
+]
+Underfull \hbox (badness 10000) in paragraph at lines 802--803
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 804--807
+
+ []
+
+[8] [9]
 This exam contains 39 questions with 43 parts, 0 subparts, and 0 subsubparts.
-(./fonte.aux))
+(./fonte.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+)
 
 Here is how much of LuaTeX's memory you used:
- 29380 strings out of 494480
+ 29378 strings out of 494480
  100000,794899 words of node,token memory allocated
  734 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 8 attribute, 99 glue_spec, 8 attrib
 ute_list, 2 write nodes
-   avail lists: 2:2030,3:560,4:84,5:359,6:2174,7:1448,8:145,9:744,10:7,11:234
- 32577 multiletter control sequences out of 65536+600000
+   avail lists: 2:2168,3:561,4:64,5:364,6:3149,7:1279,8:145,9:683,10:10,11:325
+ 32575 multiletter control sequences out of 65536+600000
  55 fonts using 7842303 bytes
- 55i,18n,80p,406b,1011s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 55i,18n,80p,634b,1007s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fonts
 /enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-dist/fonts/opentype/public/lm/lmro
 man5-regular.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman7-regula
@@ -1527,10 +1575,10 @@ ist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm
 /lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on fonte.pdf (10 pages, 302468 bytes).
+Output written on fonte.pdf (9 pages, 301622 bytes).
 
-PDF statistics: 137 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+PDF statistics: 134 PDF objects out of 1000 (max. 8388607)
+ 94 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

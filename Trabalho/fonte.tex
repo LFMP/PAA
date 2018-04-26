@@ -159,9 +159,6 @@ Prof. Daniel Kikuti
     \part $n^2 + 1000n = O(n^2)$.
     \part $2^{n+1} = \Theta(2^{n})$.
   \end{parts}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %04
   \question Expresse as seguintes funções em termos da notação $\Theta$.
   \begin{parts}
@@ -170,19 +167,11 @@ Prof. Daniel Kikuti
     \part $3n^{1.5} + (\sqrt{n})^3 \log n$.
     \part $2^n + 100^n + n!$.
   \end{parts}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %05
   \question É comum usar a notação $f(n) \prec g(n)$ para denotar que
   $f(n) \in o(g(n))$. Use esta notação para expressar a
   hierarquia de classes de complexidade das seguintes funções:
   $\sqrt{n}$, $2^{n^2}$, $n$, $\lg n$, $1$, $\lg \lg n$, $n!$, $n^2$, $n^{3/4}$, $2^n$, $n \lg n$.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
-  
-  
   %06
   \question Sejam $f(n)$ e $g(n)$ funções positivas. Informe se a
   afirmação é verdadeira ou falsa e justifique.
@@ -192,24 +181,12 @@ Prof. Daniel Kikuti
     \part $f(n) = O(g(n))$ implica $g(n) = \Omega(f(n))$
     \part $f(n) = \Theta(f(n/2))$
   \end{parts}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %07
   \question Mostre uma função $f(n)$ tal que $f(n) \not\in \Omega(f(n+1))$.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %08
   \question Mostre que $\sum_{i=1}^{n} \lg i = \Theta(n \lg n)$.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %09
   \question Mostre que $n! = O(2^{n^2})$.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %10
   \question Seja $p(n) = \sum_{i=0}^{k} a_{i}n^{i}$
   (polinômio em $n$ de grau $k$), onde $k$ é um inteiro não-negativo, $a_i$
@@ -248,9 +225,6 @@ Prof. Daniel Kikuti
     }
     \caption{\textsc{Feliz-Natal}($n$)}
   \end{algorithm}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %12
   \question Dado um inteiro $n$ (assuma que $n=2^k$, tal que
   $k$ é um número inteiro positivo) e $expr$ (que corresponde a uma
@@ -303,9 +277,6 @@ Prof. Daniel Kikuti
     \Return $count$\;
     \caption{\textsc{Count}($n$)}
   \end{algorithm}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %14
   \question Seja $count$ o número total de iterações feitas pelo
   algoritmo a seguir para uma entrada $n$ (considere que $n = 2^{2^{k}}$,
@@ -325,9 +296,6 @@ Prof. Daniel Kikuti
     \Return $count$\;
     \caption{\textsc{Count}($n$)}
   \end{algorithm}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %15
   \question Dado um inteiro $n \geq 0$ como entrada, muitos
   afirmam que o algoritmo a seguir é capaz de medir o desespero na
@@ -438,42 +406,27 @@ Prof. Daniel Kikuti
     \part $T(n/2) + T(n/4) + T(n/8) +n$
     \part $2T(n/4) + \sqrt{n}$
   \end{parts}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %18
   \question Utilize o método de árvore de recursão para supor um
   limite assintótico superior para a recorrência \linebreak
   $T(n) = 3T(n-1) + 1$. Depois verifique pelo método de
   substituição que este limite está correto.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %19
   \question Utilize o método de árvore de recursão para supor um
   limite assintótico superior para a recorrência \linebreak
   $T(n) = 2T(n/2) + n \lg n$. Depois verifique pelo método de
   substituição que este limite está correto. 
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %20
   \question Utilize o método de árvore de recursão para supor um
   limite assintótico superior para a recorrência \linebreak $T(n) = T(n/3) +
   T(2n/3) + \Theta(n)$. Depois verifique pelo método de
   substituição que este limite está correto.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %21
   \question A recorrência $T(n) = 7T(n/2) + n^2$ descreve o
   tempo de execução de um algoritmo $A$. Um algoritmo alternativo $A'$ 
   tem um tempo de execução $T'(n) = aT'(n/4) + n^2$. Qual é o maior
   inteiro $a$ que faz com que $A'$ seja assintoticamente mais rápido
   que $A$?
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %22
   \question Use o método mestre para resolver as seguintes
   recorrências: 
@@ -491,26 +444,32 @@ Prof. Daniel Kikuti
       $\log_b a = \lg 3 \simeq 1.58$ e $f(n) = n\lg n$ $\Rightarrow$  Caso 1 do Método Mestre\\
       $f(n) \in O(n^{\lg 3 - \epsilon})$, com $\epsilon = 0.08 \Rightarrow f(n) \in O(n^{\frac{3}{2}})$
       $\Rightarrow T(n) = \Theta(n^{\lg 3})$\\
+
     \textbf{b)$T(n) = 3T(n/2) + n^2$}\\
       $\log_b a = \lg 3 \simeq 1.58$ e $f(n) = n^2$ $\Rightarrow$  Caso 3 do Método Mestre\\
       $f(n) \in O(n^{\lg 3 + \epsilon})$, com $\epsilon = 0.42$
       $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2)$\\
+
     \textbf{c)$T(n) = 4T(n/2) + n^2$}\\
       $\log_b a = 2 $ e $f(n) = n^2$ $\Rightarrow$  Caso 2 do Método Mestre\\
       $f(n) \in \Theta(n^2)$
       $\Rightarrow T(n) = \Theta(n^2 \lg n)$\\
+
     \textbf{d)$T(n) = 4T(n/2) + n^2\sqrt{n}$}\\
       $\log_b a = 2 $ e $f(n) = n^2.\sqrt{n} = n^{\frac{3}{2}}$ $\Rightarrow$  Caso 3 do Método Mestre\\
       $f(n) \in \Theta(n^{2 + \epsilon})$, com $\epsilon = 0.5$
       $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2.\sqrt{n})$\\
+
     \textbf{e)$T(n) = 5T(n/5) + n$}\\
       $\log_b a = 1 $ e $f(n) = n$ $\Rightarrow$  Caso 2 do Método Mestre\\
       $f(n) \in \Theta(n)$
       $\Rightarrow T(n) = \Theta(n\lg n)$\\
+
     \textbf{f)$T(n) = 6T(n/3) + n^2$}\\
       $\log_b a = \log_3 6 \simeq 1.63$ e $f(n) = n^2$ $\Rightarrow$  Caso 3 do Método Mestre\\
       $f(n) \in \Omega(n^{\log_3 6 + \epsilon})$, com $\epsilon = 0.33$
       $\Rightarrow T(n) = \Theta(f(n)) = \Theta(n^2)$\\
+      
     \textbf{g)$T(n) = 9T(n/2) + n^3$}\\
       $\log_b a = \lg 9 \simeq 3.16$ e $f(n) = n^3$ $\Rightarrow$  Caso 1 do Método Mestre\\
       $f(n) \in O(n^{\lg 9 - \epsilon})$, com $\epsilon = 0.16 \Rightarrow f(n) \in O(n^3)$
@@ -526,9 +485,6 @@ Prof. Daniel Kikuti
   \item $T_A(n) = 27T_A(n/3) + n$
   \item $T_B(n) = 4T_B(n/2) + n^3$
   \end{itemize}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %24
   \question Os três algoritmos a seguir resolvem um
   problema de tamanho $n$ por meio da técnica de divisão e conquista.
@@ -548,9 +504,6 @@ Prof. Daniel Kikuti
       subproblema e combina suas soluções em tempo $O(n^2)$ para obter
       uma solução do problema original.
   \end{itemize}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %25
   \question Os três algoritmos a seguir computam corretamente
   $x^n$ para $x>0$ e $n \geq 0$. Mostre que os três algoritmos estão
@@ -606,9 +559,6 @@ Prof. Daniel Kikuti
       \end{algorithm}
     \end{minipage}
   \end{center}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %26
   \question Considere o algoritmo \textsc{Heapsort} descrito a
   seguir. Mostre que o algoritmo está correto usando o seguinte
@@ -635,9 +585,6 @@ Prof. Daniel Kikuti
     \caption{\textsc{Heapsort}($A$)}
   \end{algorithm}
   \DecMargin{1em}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %27
   \question Analise a complexidade dos seguintes algoritmos:
   \begin{parts}
@@ -779,16 +726,10 @@ Prof. Daniel Kikuti
     É correto afirmar que: no melhor caso, o algoritmo \textsc{Insertion Sort}
     é mais eficiente que os algoritmos \textsc{Mergesort} e \textsc{Heapsort}. 
   \end{parts}
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %29
   \question Use o modelo de árvore de decisão para representar as
   comparações efetuadas pelo algoritmo \textsc{Insertion-Sort} para
   uma instância de entrada com quatro elementos.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %30
   \question Use o modelo de árvore de decisão para representar as
   comparações efetuadas pelo algoritmo \textsc{Mergesort} para uma instância
@@ -824,9 +765,6 @@ Prof. Daniel Kikuti
   \question Use o modelo de árvore de decisão para representar as
   comparações efetuadas pelo algoritmo \textsc{Quicksort} para uma
   instância de entrada com três elementos.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %32
   \question Dado um vetor de inteiros distintos e ordenados em
   ordem crescente $A = \{a_1, \ldots, a_n\}$:
@@ -835,13 +773,7 @@ Prof. Daniel Kikuti
     índice $i$ tal que $a_i = i$ em tempo $O(\lg n)$. Por exemplo, em
     $\{-10, -3, 3, 5, 7\}$, $a_3 = 3$. Em $\{2,3,4,5,6,7\}$ não existe
     tal $i$. Argumente que seu algoritmo está correto.
-    \begin{solution}
-      Escreva a solução aqui.
-    \end{solution}
     \part Explique por que sua solução leva tempo $O(\lg n)$.
-    \begin{solution}
-      Escreva a solução aqui.
-    \end{solution}
   \end{parts}
   %33
   \question Descreva um algoritmo baseado no paradigma de Divisão
@@ -859,21 +791,22 @@ Prof. Daniel Kikuti
         $left = $\textsc{MinA}($A[\quad], inicio, meio$)\;
         $right = $\textsc{MinA}($A[\quad], meio + 1, fim$)\;
         \If{$left \geq right$}{
-          \Return $y$\;
+          \Return $right$\;
         }
         \Else{
-          \Return $x$\;
+          \Return $left$\;
         }
       }
       \caption{\textsc{MinA}($A[\quad], inicio, fim$)}
     \end{algorithm}
-    \begin{tabular}{lll}
-        $2T(n-1) + \Theta(1)$ $=$
-        $\displaystyle\sum_{k=0}^{\lg n - 1} 2^k + \Theta(1)$
-        {}& $=$ &$ \frac{2^{n+1} - 1}{2 - 1} + \Theta(1)$ \\
-        {}& $=$ &$ 2^{n+1} -1 + \Theta(1)$ \\
-        {}& $=$ &$ O(2^{n+1})$ \\
-    \end{tabular}   
+      $T(n) = 2T(n/2) + \Theta(n)$\\
+
+      Por árvore de recursão temos que o custo por nível é igual a $n$, sabendo que a árvore tem tamanho $\lg n$ 
+      e o custo das folhas é igual a $\Theta(n)$, e, fazendo o somatório concluimos que o custo total é ${n(\lg n - 1)}$ \\
+      $\therefore T(n) = O(n\lg n)$\\
+
+
+    \quad Para $n=1$ o elemento do inicio é trivialmente igual o do fim e é o menor elemento do vetor. Para um vetor de tamanho $k \geq 1$ o algorítimo divide no meio o vetor(linha 4), passa a metade da esquerda para $left$ e a metade da direita para $right$, que executarão a função de forma recuriva até chegar no caso base(n = 1), ou seja, vão de $n \ldots 1 $ obtendo os menores elementos da esquerda e da direita para cada chamada. As linhas 7 a 10 retornaram qual o menor elemento entre $left$  e $right$ de cada chamada recursiva, ou seja, ao final de cada chamada teremos o menor elemento de $\frac{n}{2}$. 
   \end{solution}
   %34
   \question Descreva um algoritmo baseado no paradigma de Divisão
@@ -881,9 +814,6 @@ Prof. Daniel Kikuti
   de $n$ números. Assuma que os elementos estão
   em um vetor $A = [1\ldots n]$. Mostre que o algoritmo está
   correto e analise sua complexidade.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %35
   \question Descreva um algoritmo que faz uso do procedimento
   \textsc{Partition} para encontrar o $k$-ésimo menor elemento.
@@ -893,9 +823,6 @@ Prof. Daniel Kikuti
   devolver o mínimo do vetor; se $k=n$ o algoritmo deveria devolver
   o máximo; para um $k=3$ devolveria o terceiro menor elemento.
   Analise seu algoritmo no pior e no melhor caso.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %36
   \question Assuma que você possui $k$ vetores ordenados, cada um
   com $n$ elementos, e você precisa combiná-los em um único vetor
@@ -905,15 +832,9 @@ Prof. Daniel Kikuti
   do primeiro vetor com o segundo, então intercale o terceiro, depois
   o quarto e assim por diante. Qual a complexidade de tempo deste
   algoritmo, em função de $k$ e $n$?
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   \part Apresente uma solução mais eficiente para este problema, por
   meio da técnica de Divisão e Conquista. Qual a complexidade de
   tempo de sua solução, em função de $k$ e $n$?
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   \end{parts}
   %37
   \question Dado um vetor de números inteiros $A[1 \ldots n]$, determine
@@ -926,17 +847,10 @@ Prof. Daniel Kikuti
   \question Descreva um algoritmo de tempo $\Theta(n \lg n)$ que, dado
   um conjunto $S$ de $n$ números inteiros e outro número $x$, determine
   se existe dois elementos em $S$ cuja soma é exatamente $x$.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %39
   \question Problema da moeda falsa. Dado um conjunto de $n$ moedas,
   $n-1$ delas verdadeiras (com mesmo peso) e uma falsa (mais leve),
   descreva um algoritmo eficiente (com tempo $o(n)$) para encontrar
-  a moeda falsa.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
-  
+  a moeda falsa. 
 \end{questions}
 \end{document}
