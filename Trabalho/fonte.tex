@@ -780,7 +780,7 @@ Prof. Daniel Kikuti
     \begin{algorithm}[H]
       \NoCaptionOfAlgo
       \DontPrintSemicolon
-      \If {$inicio < fim$}{
+      \If {$inicio \leq fim$}{
         \Return $false$\;
       }
       $meio \leftarrow inicio + ((fim - inicio)/2)$\;
@@ -795,7 +795,9 @@ Prof. Daniel Kikuti
       }
       \caption{\textsc{BuscaC}($A[\quad], inicio, fim$)}
     \end{algorithm}
-    \textbf{b)} O algoritimo divide sucessivamente o vetor por dois sucessivamente e busca se o elemento $a_i = A[i]$, cada uma dessas operações
+    Como o vetor está ordenado, dividimos o vetor em conjuntos menores e fazemos a comparação de sua posição com o seu valor, caso um deles retornar $true$ $\exists !$ caso em que $a_i = i$, caso contrário o algoritmo irá retornar $false$.
+
+    \textbf{b)} O algoritimo divide sucessivamente o vetor por dois e busca se o elemento $a_i = A[i]$, cada uma dessas operações
     tem tempo constante  e como o número de divisões é no máximo $\lg n$, temos o seguinte somatório:\\
     $\displaystyle\sum_{k=0}^{\lg n - 1} 1 + = \lg n \Rightarrow T(n) = \Theta(\lg n)$
   \end{solution}
@@ -865,9 +867,6 @@ Prof. Daniel Kikuti
   \question Dado um vetor de números inteiros $A[1 \ldots n]$, determine
   quais elementos do vetor são únicos. Apresente um algoritmo eficiente.
   Faça uma análise de complexidade.
-  \begin{solution}
-    Escreva a solução aqui.
-  \end{solution}
   %38
   \question Descreva um algoritmo de tempo $\Theta(n \lg n)$ que, dado
   um conjunto $S$ de $n$ números inteiros e outro número $x$, determine

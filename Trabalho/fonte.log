@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  26 APR 2018 15:04
+This is LuaTeX, Version 1.0.4 (TeX Live 2017/Arch Linux)  (format=lualatex 2018.4.5)  26 APR 2018 20:04
  restricted system commands enabled.
 **fonte.tex
 (./fonte.tex
@@ -34,7 +34,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.126 seconds
+luaotfload | main : initialization completed in 0.125 seconds
 Babel <3.18> and hyphenation patterns for 1 language(s) loaded.
 (./exam.cls
 Document Class: exam 2017/12/17 Version 2.603 by Philip Hirschhorn
@@ -1534,12 +1534,12 @@ Overfull \hbox (12.2842pt too wide) in paragraph at lines 779--797
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 827--828
+Underfull \hbox (badness 10000) in paragraph at lines 829--830
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 829--832
+Underfull \hbox (badness 10000) in paragraph at lines 831--834
 
  []
 
@@ -1553,7 +1553,7 @@ Here is how much of LuaTeX's memory you used:
  734 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 5 glue, 1 kern, 8 attribute, 99 glue_spec, 8 attrib
 ute_list, 2 write nodes
-   avail lists: 2:2168,3:561,4:64,5:364,6:2775,7:1279,8:145,9:683,10:10,11:289
+   avail lists: 2:2168,3:561,4:64,5:364,6:2965,7:1279,8:145,9:683,10:10,11:290
  32580 multiletter control sequences out of 65536+600000
  59 fonts using 8171423 bytes
  55i,18n,80p,634b,1007s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -1576,7 +1576,7 @@ ist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm
 /lmri10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on fonte.pdf (9 pages, 302919 bytes).
+Output written on fonte.pdf (9 pages, 303202 bytes).
 
 PDF statistics: 134 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream
