@@ -775,6 +775,31 @@ Prof. Daniel Kikuti
     tal $i$. Argumente que seu algoritmo está correto.
     \part Explique por que sua solução leva tempo $O(\lg n)$.
   \end{parts}
+  \begin{solution}
+    \textbf{a)}
+    \begin{algorithm}[H]
+      \NoCaptionOfAlgo
+      \DontPrintSemicolon
+      \If {$inicio < fim$}{
+        \Return $false$\;
+      }
+      $meio \leftarrow inicio + ((fim - inicio)/2)$\;
+      \If{$A[meio] < meio$}{
+        \Return $\textsc{BuscaC}($A[\quad], meio + 1, fim$)$\;
+      }
+      \ElseIf{$A[meio] > meio$}{
+        \Return $\textsc{BuscaC}($A[\quad], inicio, meio - 1$)$\;
+      }
+      \Else{
+        \Return $true$\;
+      }
+      \caption{\textsc{BuscaC}($A[\quad], inicio, fim$)}
+    \end{algorithm}
+    \textbf{b)} O algoritimo divide sucessivamente o vetor por dois sucessivamente e busca se o elemento $a_i = A[i]$, cada uma dessas operações
+    tem tempo constante  e como o número de divisões é no máximo $\lg n$, temos o seguinte somatório:\\
+    $\displaystyle\sum_{k=0}^{\lg n - 1} 1 + = \lg n \Rightarrow T(n) = \Theta(\lg n)$
+  \end{solution}
+
   %33
   \question Descreva um algoritmo baseado no paradigma de Divisão
   e Conquista que encontra o mínimo de um conjunto de $n$ números.
@@ -799,10 +824,10 @@ Prof. Daniel Kikuti
       }
       \caption{\textsc{MinA}($A[\quad], inicio, fim$)}
     \end{algorithm}
-      $T(n) = 2T(n/2) + \Theta(n)$\\
+      $T(n) = 2T(n/2) + \Theta(1)$\\
 
       Por árvore de recursão temos que o custo por nível é igual a $n$, sabendo que a árvore tem tamanho $\lg n$ 
-      e o custo das folhas é igual a $\Theta(n)$, e, fazendo o somatório concluimos que o custo total é ${n(\lg n - 1)}$ \\
+      e o custo das folhas é igual a $\Theta(n)$, e, fazendo o somatório concluimos que o custo total é ${n(\lg n - 1) + \Theta(n)}$ \\
       $\therefore T(n) = O(n\lg n)$\\
 
 
