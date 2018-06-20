@@ -1,9 +1,11 @@
 #https://www.urionlinejudge.com.br/judge/pt/problems/view/2446
 def troco(coins,m,v):
-	memo = [['N' for j in range(v)] for i in range(m)]
+	memo = [['' for j in range(v)] for i in range(m)]
 	for i in range(m):
 		for j in range(v):
-			if i == 0:
+			if memo[i][j] == v:
+				return 'S'
+			elif i == 0:
 				if j == 0:
 					ans = 'S'
 				else:
