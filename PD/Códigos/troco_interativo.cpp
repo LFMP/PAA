@@ -1,15 +1,20 @@
 //https://www.urionlinejudge.com.br/judge/pt/problems/view/2446
 #include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
 using namespace std;
 
 int troco(int coins[], int m, int v){
-	int ans,memo[m+1][v+1];
+  // Alocação dinâmica do memo
+  int ** memo = (int**)malloc(sizeof(int*) * (m+1)), i, ans;
+  for(i=0; i<m+1; i++)
+    memo[i] = (int*)malloc(sizeof(int) * (v+1));
 
-	for (int i = 0; i <= m; ++i){
+	for (int i = 0; i < m+1; ++i){
 		memo[i][0] = 1;
 	}
-	for (int i = 1; i <= v; ++i){
+	for (int i = 1; i < v+1; ++i){
 		memo[0][i] = 0;
 	}
 	for (int i = 1; i <= m; i++){
