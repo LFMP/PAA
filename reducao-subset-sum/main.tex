@@ -1,0 +1,264 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+\usepackage{amsmath}
+\usepackage{enumitem}
+\usepackage[brazil]{babel}   
+\usepackage[nottoc]{tocbibind}
+\usepackage[utf8]{inputenc}
+\usepackage[]{algorithm2e}
+\sloppy
+
+\title{Redução do Subset-Sum para o Set-Partition}
+
+\author{Arthur, Douglas, Felipe, Luiz, Sandro\\
+RA105422, RA103654, RA102845, RA103491, RA98397}
+\address{Departamento de Informática -- Universidade Estadual de Maringá(UEM)}
+
+\begin{document} 
+
+\maketitle
+
+\section{Breve descrição do Subset-Sum}
+
+Dado um conjunto (multiconjunto) $S = \{a_1,a_2,\cdots, a_n\}$ de números naturais e um valor $x$, descobrir se existe um subconjunto $S'\subseteq S$ tal que $\displaystyle\sum_{a \in S'} a = x$. Uma instância do problema terá resposta $true$ ou $false$.
+
+\subsection{Recorrência}
+
+$opt(S,x)\left\{\begin {matrix}
+true & se\;s=0\\
+false & se\;n = 0 \wedge s\neq 0\\
+opt(S-1,x) & se\;a_n \not\in S'\\
+opt(S-1,x-a_n) & se\;a_n \in S'
+\end{matrix}\right.$
+
+\subsection{Algoritmo Força Bruta}
+
+\begin{algorithm}[H]
+\SetKwFunction{SubsetSum}{SubsetSum}
+\SetAlgoFuncName{SubsetSum}{SubsetSum}
+\SubsetSum{S,x,n}{\\
+\eIf{n = 0}{
+	\eIf{x = 0}{ans $\leftarrow true$}{ans $\leftarrow false$}
+}
+{
+	ans $\leftarrow$ \SubsetSum{S,x-S[n],n-1}\\
+	\If{ans = $false$ and $S[n] \leq x$}{
+		ans $\leftarrow$ \SubsetSum{S,x-S[n],n-1}
+	}
+}
+\KwRet ans
+}
+\end{algorithm}
+
+\subsubsection{Análise de Complexidade}
+
+T(S,x) = T(S-1,x) + T(S-1,x-1) + $\Theta$(1) $\Rightarrow$ T(S,x) = $O(2^n)$
+\subsection{Algoritmo Programação Dinâmica}
+
+\begin{algorithm}[H]
+\SetKwFunction{SubsetSumMemo}{SubsetSumMemo}
+\SetAlgoFuncName{SubsetSumMemo}{SubsetSumMemo}
+\SubsetSumMemo{S,x,n}{\\
+\If{memo[n][x]=-1}{
+\eIf{n = 0}{
+	\eIf{x = 0}{ans $\leftarrow true$}{ans $\leftarrow false$}
+}
+{
+	ans $\leftarrow$ \SubsetSumMemo{S,x-S[n],n-1}\\
+	\If{ans = $false$ and $S[n] \leq x$}{
+		ans $\leftarrow$ \SubsetSumMemo{S,x-S[n],n-1}
+	}
+}
+ans $\leftarrow$ memo[n][x]
+}
+\KwRet memo[n][x]
+}
+\end{algorithm}
+
+\subsubsection{Análise de Complexidade}
+
+\# de subproblemas $\cdot$ tempo $/$ subproblemas = (n$\cdot$x)$\cdot$ $\Theta$(1) = $\Theta$(n$\cdot$x)
+
+\section{Breve descrição do Set-Partition}
+
+Dado um vetor de inteiros não negativos $P = \{p_1, p_2, \cdots, p_n\}$, decidir se há como dividir o vetor $P$ em dois subvetores, $Q_1$ e $Q_2$ tal que $\displaystyle\sum_{p' \in Q_1} p' = \displaystyle\sum_{p'' \in Q_2} p''$ e $Q_1 \cup Q_2 = P$. Uma instância do problema terá resposta $true$ ou $false$.
+
+\subsection{Recorrência}
+
+$opt(P,sum,n)\left\{\begin {matrix}
+false & se\;sum\% 2 = 1\\
+SubsetSum(P,\frac{sum}{2},n) & se\;sum\% 2 = 0
+\end{matrix}\right.$
+
+\subsection{Algoritmo Força Bruta}
+
+\begin{algorithm}[H]
+\SetKwFunction{Partition}{Partition}
+\SetKwFunction{SubSetSumMemo}{SubSetSumMemo}
+\SetAlgoFuncName{Partition}{Partition}
+\SetAlgoFuncName{SubSetSumMemo}{SubSetSumMemo}
+\Partition{arr,n}{\\
+	sum $\leftarrow$ 0\\
+    \For{$i\leftarrow 1$ \KwTo n}{
+    	sum $+=$ arr[i]
+  	}
+    \If{sum\% 2 $\neq$ 0}{
+    	\KwRet false
+    }
+    \KwRet \SubSetSumMemo{arr, $\frac{sum}{2}$,n}
+}
+\end{algorithm}
+
+\subsubsection{Análise de Complexidade}
+
+$\begin{matrix}
+Complexidade&=& n + \Theta(SubSetSumMemo)\\
+		  \ &=& (n + (n \cdot x)) \cdot \Theta(1)\\
+          \ &=& O(n \cdot x)
+\end{matrix}$
+
+\section{Set-Partition $\in$ $NP$} \label{sec:PartitionInNP}
+
+$Certificado$: Subconjunto $A$ tal que $A \subseteq S$. É possível verificar se os conjuntos $A$ e ($S-A$) têm somas iguais em tempo polinomial, bastando para isso somar os elementos do conjunto $A$ e os elementos do conjunto ($S-A$) e comparar a soma. Se esses números forem iguais, podemos afirmar que é $verdadeiro$.
+
+\subsection{Algoritmo verificador}
+\begin{algorithm}[H]
+\SetKwFunction{Verificador}{Verificador}
+\SetAlgoFuncName{Verificador}{Verificador}
+\Verificador{S,A}{\\
+	Soma $\leftarrow$ soma dos elementos de A\\
+    \For{$i\leftarrow 1$ \KwTo A.lenght}{
+	 	Flag $\leftarrow$ $False$\\
+        \For{$j \leftarrow 1$ \KwTo S.lenght}{
+        	\If{A[i] = S[j]}{
+            	retire o elemento do vetor $S$\\
+                Flag $\leftarrow True$
+            }
+        }
+        \If{!Flag}{
+        	\KwRet $False$
+        }
+
+  	}
+    Soma2 $\leftarrow$ soma dos elementos de $S$\\
+    \eIf{Soma = Soma2}{
+    	\KwRet $True$
+    }{
+    \KwRet $False$
+    }
+}
+\end{algorithm}
+\section{Primeira redução}
+
+Dado um vetor $S$ e um valor $x$, onde há um subconjunto  $S' \subseteq S$ em que a soma de seus elementos é igual a $x$, assuma que $k$ é a soma de todos os elementos do conjunto $S$.
+Redução de instâncias do $SubsetSum$ a instâncias do $SetPartition$: Dado um vetor $S$ e um valor $x$, entrada do $SubsetSum$, a entrada para o $Partition$ será $P = S \cup \{k-2x\}$ (realizar a união leva tempo polinomial). Devemos provar que a instância $\{S,x\} \in SubsetSum$ retorna verdadeiro se, e somente se, $\{P\} \in SetPartition$ também for verdadeiro.
+
+\subsection{Ida}
+
+Se há em $S$ um subconjunto $S'$, cuja soma de seus elemento resulta no valor $x$, é possível particionar o conjunto $P$ em dois subconjuntos de mesma soma. Seja o conjunto $S'' = S - S'$ e a soma de seus elementos igual a $k-x$. A soma dos elementos de $S'$ com o elemento $k-2x$ é igual a ($k-2x$) $+ x = k-x$. Portanto, é possível formar dois subconjuntos com soma igual a $k-x$.
+
+\subsection{Volta}
+
+Se $P$ pode ser particionado em dois subconjuntos de somas iguais ($S''$ e $S' \cup \{k - 2x\}$), então é possível identificar um subconjunto de $S$ cuja soma seja $x$. Ao retirar o elemento $k - 2x$ do subconjunto $P - S''$, obtemos um subconjunto de $S'$ que possui soma $x$, que queríamos demonstrar.
+
+\subsection{Casos de teste}
+Seja ‘k’ a soma do conjunto $S$ do $SubsetSum$, $x$ o $target$ para este problema, $s'$ o subconjunto cuja soma resulta no valor $x$, $s'' = S - s'$. $P$ representa o vetor do $SetPartition$ com a redução aplicada.
+
+\subsubsection{Exemplo 1} 
+Primeiro devemos definir uma instância de $SubsetSum$,  $S = \{1,2,3,4\}$ cuja soma é 10, selecionando o subconjunto $\{3,4\}$ em que a soma é 7, ou seja, $x = 7$. Dessa maneira, precisamos calcular $\{k-2x\}$.\\
+$k = 10;\\ x = 7;\\ s' = \{3,4\};\\ s'' = \{1,2\};\\ k - 2x = -4$
+\\
+Aplicando o algoritmo de redução, obtemos o conjunto $P$.
+\\
+$\begin{matrix}
+P &=& S \cup \{k-2x\}\\
+\ &=& \{1,2,3,4\} \cup \{-4\}\\
+\ &=& \{1,2,3,4,-4\}\\
+\ &=& s'' \cup (s' \cup \{k-2x\})\\
+\ &=& \{1,2\} \cup \{3,4,-4\}
+\end{matrix}$
+\\
+\textbf{$\Rightarrow$} Note que há dois subconjuntos que resultam em $k - x  = 3$, $s'' = \{1,2\}$ e $s' \cup \{k - 2x\} = \{3,4,-4\}$, pois a soma dos elementos de $s''$ será sempre $k - x$, visto que $x$ é a soma dos elementos de $s'$ e $s'' = S - s'$. A soma do conjunto restante, isto é, $P - s'' = s' \cup \{k-2x\} = \{3,4,-4\}$ que resulta no valor $x + k - 2x = k -x = 7 + 10 - 2\cdot7 = 3$. Portanto, podemos afirmar que existem dois subconjuntos que satisfazem o requisito do $SetPartition$.\\
+\\
+\textbf{$\Leftarrow$} Agora partindo do conjunto $P$, vamos mostrar que existe um subconjunto que somado dê o valor de $x$. Dentro do conjunto $P$ temos dois subconjuntos com somas iguais a $k - x = 3$. $P = s'' \cup (s' \cup \{k - 2x\}) = \{1,2\} \cup \{3,4,-4\}$, e ao retirarmos o elemento $k - 2x = - 4$ do subconjunto $P - s'' = \{3,4-4\}$, obtém-se o subconjunto $s' = \{3,4\}$ que como definido anterior, tem soma igual a $x = 7$.
+\\
+\subsubsection{Exemplo 2}
+Vamos utilizar outra instância do $Subsetsum$ $S = \{6,2,5,10\}$ em que a soma de todos elementos é 23, e $x = 15$, o subconjunto cuja soma é $x$ é $s' = \{5,10\}$. Novamente, precisamos calcular $k - 2x$.\\
+$K = 23;\\x = 15;\\s' = \{5,10\};\\s'' = \{6,2\};\\k - 2x = -7$
+\\
+Aplicando o algoritmo de redução, temos:
+\\
+$\begin{matrix}
+P &=& S \cup \{k-2x\}\\
+\ &=& \{6,2,5,10\} \cup \{-7\}\\
+\ &=& \{6,2,5,10,-7\}\\
+\ &=& s'' \cup (s' \cup \{k-2x\})\\
+\ &=& \{6,2\} \cup \{5,10,-7\}
+\end{matrix}$
+\\
+\textbf{$\Rightarrow$} Note que novamente há dois subconjuntos que resultam em $k - x  = 8$, $s'' = \{6,2\}$ e $s' \cup \{k - 2x\} = \{5,10,-7\}$. O motivo é análogo ao exemplo anterior. Portanto, podemos afirmar que existem dois subconjuntos que satisfazem o requisito do $SetPartition$ para retornar verdadeiro.\\
+\\
+\textbf{$\Leftarrow$} Partindo do conjunto $P$, verificaremos se existe um subconjunto somado que resulta no valor de $x$. Dentro do conjunto $P$ temos dois subconjuntos com somas iguais a $k - x = 8$. $P = s'' \cup (s' \cup \{k - 2x\}) = \{6,2\} \cup \{5,10,-7\}$, e ao retirarmos o elemento $k - 2x = - 7$ do subconjunto $P - s'' = \{5,10-7\}$, obtém-se o subconjunto $s' = \{5,10\}$ que, como definido anterior, tem soma igual a $x = 15$.
+
+\section{Segunda redução}
+
+Seja ($S,x$) uma instância qualquer do $SubsetSum$. Vamos transformar esta instância em uma instância do $Partition$. Seja $k$ igual a soma dos elementos de $S$ e $P = S \;\cup a_1\; \cup\; a_2$, onde $a_1$ e $a_2$ são:\\
+$a_1 = 2k + x \\a_2 = 3k - x$\\
+A inserção desses dois elementos em $P$ pode ser feita em tempo polinomial.
+\subsection{Ida}
+
+Assuma que para uma entrada ($S,x$) o $SubsetSum$ retorne $verdadeiro$, portanto, existe um subvetor $S'\subseteq S$, tal que a soma de seus elementos é igual a $x$. Então, existe um conjunto $P = \{\{S - S'\} \cup \{a_1\} , S' \cup a_2\}$ que retorna verdadeiro para o $SetPartition$.\\
+Calculando ($k - x$) $+$ ($2k + x$) , ($x$) $+$ ($3k - x$) fazemos as operações de união,em tempo polinomial, que resulta em dois subconjuntos cujo a soma de seus elementos é $3k$. Com isso podemos afirmar que haverá dois subconjuntos em $P$ que contém a mesma soma.
+
+\subsection{Volta}
+
+Agora assumimos que existem dois subconjuntos $P_1 \subseteq P$ e $P_2 \subseteq P$ tal que $P_1 \neq P_2$ e $\{P_1\} \cup \{P_2\} = P$, cujas somas possuem o mesmo valor. Como $P = \{\{S\},a_1,a_2\}$, a soma de todos os elementos contidos em $P$ é igual a $6k$. E com isso podemos garantir que $a_1$ e $a_2$ não podem aparecer no mesmo subconjunto, sendo assim, podemos supor que $a_1 \in P_1$ e $a_2 \in P_2$. Então, se fizermos $\{P_2\} - a_2$, é equivalente a fazermos $3k - $($3k - x$), que resulta em $x$. Portanto, está demonstrado que existe um valor $x \in P$ que satisfaz o problema do $SubsetSum$.
+
+\subsection{Caso de teste}
+Nesses exemplos, utilizaremos $k$ como a soma dos elementos do nosso conjunto inicial $S$, a variável $x$ será o $target$ do problema $SubsetSum$ e o vetor $s'$ é o subconjunto cuja soma resulta no valor $x$.
+\subsubsection{Exemplo 1}
+Utilizaremos uma instância de $SubsetSum$, pegando o vetor $S = \{2,5,3,9\}$, onde a soma de todos elementos é 19, selecionamos o subvetor $\{2,5\}$ em que a soma é 7. A partir do vetor $S$ vamos criar dois elementos $a_1$ e $a_2$.\\
+$K = 19;\\x = 7;\\s' = \{2,5\};\\a_1 = 2k + x = 45;\\a_2 = 3k - x = 50$
+\\
+Aplicando o algoritmo de redução, obtemos o vetor $P$.
+\\
+$\begin{matrix}
+P &=& \{\{S - s'\} \cup \{a_1\} , \{s' \cup a_2\}\}\\
+\ &=& \{\{S - s'\} \cup \{a_1\} , \{s' \cup a_2\}\}\\
+\ &=& \{\{\{2,5,3,9\} - \{2,5\} \cup \{45\}\} , \{\{2,5\} \cup \{50\}\}\}\\
+\ &=& \{\{3,9,45\} , \{2,5,50\}\}
+\end{matrix}$\\
+Note que a soma de $S$ é 19, ou seja, com a soma ímpar seria impossível o $SetPartition$ retornar verdadeiro. Mas após a redução, a soma do vetor $P$ é igual a 114. Além disso dentro do vetor $P$ há dois vetores possuem soma igual a 57, sendo assim o $SetPartition$ é verdade.\\
+Agora partindo do vetor $P$, vamos mostrar que existe um $x$ válido. Dentro do vetor $P$ temos dois vetores com soma igual que vamos denominar $s_1 = \{3,9,45\}$ e $s_2 = \{2,5,50\}$.\\
+Aplicando o algoritmo de redução, obtemos o vetor $s'$:\\
+$\begin{matrix}
+s' &=& \{\{s_2\} - \{a_2\}\}\\
+\ &=& \{2,5,50\} - \{50\}\\
+\ &=& \{2,5\}
+\end{matrix}$\\
+Em que a soma do vetor $s'$ é igual a 7, que é o valor de $x$ que queríamos.
+\subsubsection{Exemplo 2}
+Vamos pegar outra instância do $SubsetSum$, o vetor $S = \{3,7, 4,16,8\}$ onde a soma de todos elementos é 38, o subvetor \{3,7\} que a soma resulta em 10. Vamos criar os dois elementos para adicionarmos ao vetor.\\
+$K = 38;\\x = 10;\\s' = \{3,7\};\\a_1 = 2k + x = 86;\\a_2 = 3k - x = 104$\\
+Aplicando o algoritmo de redução, temos:\\
+$\begin{matrix}
+P &=& \{\{S - s'\} \cup \{a_1\} , \{s' \cup a_2\}\}\\
+\ &=& \{\{3,7,4,16,8\} - \{3,7\} \cup \{86\}, \{3,7\} \cup \{104\}\}\\
+\ &=& \{\{4,16,8,86\} , \{3,7,104\}\}
+\end{matrix}$\\
+Vemos que o vetor $P$ possui soma equivalente a 228, além disso dentro do vetor existem dois subvetores $s_1 = \{4,16,8,86\}$ e $s_2 = \{3,7,104\}$ em que ambos possuem a mesma soma. Sendo assim o vetor $P$ retorna verdade para esse vetor.\\
+Novamente, partindo do vetor $P$ vamos provar que existe um subvetor que tem a soma exata de $x$. Aplicando o algoritmo de redução, temos:\\
+$\begin{matrix}
+s' &=& \{\{s_2\} - \{a_2\}\}\\
+\ &=& \{3,7,104\} - \{104\}\\
+\ &=& \{3,7\}
+\end{matrix}$\\
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+\cite{hwsoln13}.
+\cite{cs360}.
+\cite{wiki}.
+\end{document}

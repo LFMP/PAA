@@ -1,0 +1,16 @@
+\begin{thebibliography}{}
+
+\bibitem[cs3 ]{cs360}
+Answers to assignment 4.
+\newblock \url{https://www.cs.mcgill.ca/~jmerce1/a4ans.html}.
+
+\bibitem[wik ]{wiki}
+Partition problem.
+\newblock \url{https://en.wikipedia.org/wiki/Partition_problem}.
+
+\bibitem[Nakayama ]{hwsoln13}
+Nakayama, M.
+\newblock Homework 13 solutions.
+\newblock \url{https://web.njit.edu/~marvin/cs341/hw/hwsoln13.pdf}.
+
+\end{thebibliography}
